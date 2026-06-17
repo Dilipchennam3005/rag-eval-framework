@@ -21,6 +21,12 @@ from src.embedding.bm25_index import BM25Index
 from src.retrieval import HybridRetriever, VectorRetriever, CrossEncoderReranker
 from src.generation import Generator
 
+try:
+    import sentence_transformers  # noqa: F401
+    _RERANKER_AVAILABLE = True
+except ImportError:
+    _RERANKER_AVAILABLE = False
+
 
 @st.cache_resource
 def load_config():
@@ -84,7 +90,12 @@ with tab_query:
     with col3:
         prompt_version = st.selectbox("Prompt version", ["v1", "v2"])
     with col4:
-        use_reranker = st.checkbox("Cross-encoder rerank", value=False)
+        use_reranker = st.checkbox(
+            "Cross-encoder rerank",
+            value=False,
+            disabled=not _RERANKER_AVAILABLE,
+            help=None if _RERANKER_AVAILABLE else "Not available in cloud deployment (sentence-transformers not installed)",
+        )
 
     if retriever_type == "Hybrid" and not _bm25_path(strategy).exists():
         st.info(
@@ -139,9 +150,11 @@ with tab_query:
                         "cost_usd": result["cost_usd"],
                     })
 
+            except ImportError as e:
+                st.error(f"Missing dependency: {e}")
             except Exception as e:
                 st.error(f"Error: {e}")
-                st.info("Make sure the index has been built by running `python main.py` first.")
+                st.info("Make sure the Pinecone index has been built by running `python main.py` first.")
 
 # ── Experiment results tab ─────────────────────────────────────────────────
 with tab_compare:
