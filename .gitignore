@@ -1,0 +1,12 @@
+venv/
+.env
+__pycache__/
+*.pyc
+data/raw/
+data/processed/
+*.db
+.mlflow/
+wandb/
+*.egg-info/
+dist/
+.DS_Store
