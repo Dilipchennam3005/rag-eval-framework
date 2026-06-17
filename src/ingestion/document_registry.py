@@ -130,8 +130,10 @@ if __name__ == "__main__":
     registry = DocumentRegistry()
 
     companies = [
-        {"ticker": "AAPL", "cik": "0000320193"},
-    ]
+    {"ticker": "AAPL", "cik": "0000320193"},
+    {"ticker": "MSFT", "cik": "0000789019"},
+    {"ticker": "JPM",  "cik": "0000019617"},
+]
 
     for company in companies:
         downloads = download_company_filings(
