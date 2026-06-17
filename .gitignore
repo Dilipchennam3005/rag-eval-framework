@@ -4,8 +4,10 @@ __pycache__/
 *.pyc
 data/raw/
 data/processed/
-*.db
+data/chromadb/
+data/chunks/
 .mlflow/
+mlflow.db
 wandb/
 *.egg-info/
 dist/
