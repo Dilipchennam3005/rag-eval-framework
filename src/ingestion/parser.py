@@ -2,6 +2,9 @@ import re
 from pathlib import Path
 from bs4 import BeautifulSoup
 from loguru import logger
+import warnings
+from bs4 import XMLParsedAsHTMLWarning
+warnings.filterwarnings("ignore", category=XMLParsedAsHTMLWarning)
 
 
 SECTION_HEADERS = [
