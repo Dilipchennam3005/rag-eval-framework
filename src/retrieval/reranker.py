@@ -1,5 +1,4 @@
 from loguru import logger
-from sentence_transformers import CrossEncoder
 
 
 class CrossEncoderReranker:
@@ -9,6 +8,12 @@ class CrossEncoderReranker:
     """
 
     def __init__(self, model: str = "cross-encoder/ms-marco-MiniLM-L-6-v2"):
+        try:
+            from sentence_transformers import CrossEncoder
+        except ImportError as exc:
+            raise ImportError(
+                "sentence-transformers is required for reranking: pip install sentence-transformers"
+            ) from exc
         self.model_name = model
         self.model = CrossEncoder(model)
         logger.info(f"CrossEncoderReranker loaded: {model}")
