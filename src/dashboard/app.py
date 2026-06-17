@@ -27,6 +27,11 @@ def load_config():
     return yaml.safe_load(Path("configs/config.yaml").read_text())
 
 
+def _bm25_path(strategy: str) -> Path:
+    cfg = load_config()
+    return Path(cfg["data"]["bm25_index_path"].replace(".pkl", f"_{strategy}.pkl"))
+
+
 @st.cache_resource
 def load_retriever(strategy: str, retriever_type: str):
     cfg = load_config()
@@ -36,11 +41,12 @@ def load_retriever(strategy: str, retriever_type: str):
         namespace=f"sec_{strategy}",
         dimension=cfg["pinecone"]["dimension"],
     )
-    bm25 = BM25Index(cfg["data"]["bm25_index_path"].replace(".pkl", f"_{strategy}.pkl"))
-    bm25.load()
 
     if retriever_type == "Hybrid":
-        return HybridRetriever(embedder, vector_store, bm25, **cfg["retrieval"]["hybrid"])
+        bm25 = BM25Index(str(_bm25_path(strategy)))
+        if bm25.load():
+            return HybridRetriever(embedder, vector_store, bm25, **cfg["retrieval"]["hybrid"])
+
     return VectorRetriever(embedder, vector_store)
 
 
@@ -79,6 +85,12 @@ with tab_query:
         prompt_version = st.selectbox("Prompt version", ["v1", "v2"])
     with col4:
         use_reranker = st.checkbox("Cross-encoder rerank", value=False)
+
+    if retriever_type == "Hybrid" and not _bm25_path(strategy).exists():
+        st.info(
+            "BM25 index not found — running in vector-only mode. "
+            "Run `python main.py` locally to build the index and enable hybrid retrieval."
+        )
 
     question = st.text_input(
         "Ask a question about AAPL, MSFT, or JPM 10-K filings",

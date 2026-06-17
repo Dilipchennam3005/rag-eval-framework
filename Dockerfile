@@ -14,9 +14,6 @@ RUN pip install --no-cache-dir -r requirements-deploy.txt
 COPY src/ src/
 COPY configs/ configs/
 COPY prompts/ prompts/
-COPY data/bm25_index_fixed_size.pkl data/bm25_index_fixed_size.pkl
-COPY data/bm25_index_document_aware.pkl data/bm25_index_document_aware.pkl
-COPY data/registry.db data/registry.db
 COPY experiments/ experiments/
 
 EXPOSE 8501
