@@ -1,0 +1,584 @@
+{
+  "strategy": "fixed_size",
+  "prompt_version": "v1",
+  "num_questions": 8,
+  "scores": {
+    "faithfulness": 0.9765625,
+    "answer_relevancy": 0.9963333720339602,
+    "context_precision": 0.6614583333080903,
+    "context_recall": 0.59375
+  },
+  "total_cost_usd": 0.00306,
+  "avg_cost_per_query_usd": 0.000382,
+  "total_tokens": 19178,
+  "results": [
+    {
+      "question": "What was Apple's total revenue in fiscal year 2024?",
+      "answer": "Apple's total revenue in fiscal year 2024 was $391,035 million.",
+      "model": "gpt-4o-mini",
+      "prompt_version": "v1",
+      "num_chunks": 5,
+      "prompt_tokens": 3014,
+      "completion_tokens": 17,
+      "total_tokens": 3031,
+      "cost_usd": 0.000462,
+      "contexts": [
+        "The following discussion should be read in conjunction with the consolidated financial statements and accompanying notes included in Part II, Item 8 of this Form 10-K. This Item generally discusses 2024 and 2023 items and year-to-year comparisons between 2024 and 2023. Discussions of 2022 items and year-to-year comparisons between 2023 and 2022 are not included, and can be found in \u201cManagement\u2019s Discussion and Analysis of Financial Condition and Results of Operations\u201d in Part II, Item 7 of the Company\u2019s Annual Report on Form 10-K for the fiscal year ended September\u00a030, 2023.\nProduct, Service and Software Announcements\nThe Company announces new product, service and software offerings at various times during the year. Significant announcements during fiscal year 2024 included the following:\nFirst Quarter 2024:\n\u2022\nMacBook Pro 14-in.;\n\u2022\nMacBook Pro 16-in.; and\n\u2022\niMac.\nSecond Quarter 2024:\n\u2022\nMacBook Air 13-in.; and\n\u2022\nMacBook Air 15-in.\nThird Quarter 2024:\n\u2022\niPad Air;\n\u2022\niPad Pro;\n\u2022\niOS 18, macOS Sequoia, iPadOS 18, watchOS 11, visionOS 2 and tvOS 18, updates to the Company\u2019s operating systems; and\n\u2022\nApple Intelligence\u2122, a personal intelligence system that uses generative models.\nFourth Quarter 2024:\n\u2022\niPhone 16, iPhone 16 Plus, iPhone 16 Pro and iPhone 16 Pro Max;\n\u2022\nApple Watch Series 10; and\n\u2022\nAirPods 4.\nFiscal Period\nThe Company\u2019s fiscal year is the 52- or 53-week period that ends on the last Saturday of September. An additional week is included in the first fiscal quarter every five or six years to realign the Company\u2019s fiscal quarters with calendar quarters, which occurred in the first quarter of 2023. The Company\u2019s fiscal years 2024 and 2022 spanned 52 weeks each, whereas fiscal year 2023 spanned 53 weeks.\nMacroeconomic Conditions\nMacroeconomic conditions, including inflation, interest rates and currency fluctuations, have directly and indirectly impacted, and could in the future materially impact, the Company\u2019s results of operations and financial condition.\nApple Inc",
+        "Asia Pacific | Corporate | Total\nNet sales | $ | 162,560 | $ | 94,294 | $ | 72,559 | $ | 24,257 | $ | 29,615 | $ | \u2014 | $ | 383,285\nCost of sales | (92,394) | (54,101) | (39,787) | (11,542) | (16,313) | \u2014 | (214,137)\nResearch and development | \u2014 | \u2014 | \u2014 | \u2014 | \u2014 | (29,915) | (29,915)\nSelling and marketing | (9,658) | (4,095) | (2,444) | (827) | (1,236) | \u2014 | (18,260)\nGeneral and administrative | \u2014 | \u2014 | \u2014 | \u2014 | \u2014 | (6,672) | (6,672)\nOperating income/(loss) | $ | 60,508 | $ | 36,098 | $ | 30,328 | $ | 11,888 | $ | 12,066 | $ | (36,587) | $ | 114,301\n\nApple Inc. | 2025 Form 10-K | 47\nThe following tables show net sales for 2025, 2024 and 2023 and long-lived assets as of September\u00a027, 2025 and September\u00a028, 2024 for countries that individually accounted for 10% or more of the respective totals, as well as aggregate amounts for the remaining countries (in millions):\n2025 | 2024 | 2023\nNet sales:\nU.S. | $ | 151,790 | $ | 142,196 | $ | 138,573\nChina(1) | 64,377 | 66,952 | 72,559\nOther countries | 199,994 | 181,887 | 172,153\nTotal net sales | $ | 416,161 | $ | 391,035 | $ | 383,285\n\n2025 | 2024\nLong-lived assets:\nU.S. | $ | 40,274 | $ | 35,664\nChina(1) | 3,617 | 4,797\nOther countries | 5,943 | 5,219\nTotal long-lived assets | $ | 49,834 | $ | 45,680\n\n(1)\nChina includes Hong Kong and Taiwan.\nApple Inc. | 2025 Form 10-K | 48\nReport of Independent Registered Public Accounting Firm\nTo the Shareholders and the Board of Directors of Apple Inc.\nOpinion on the Financial Statements\nWe have audited the accompanying consolidated balance sheets of Apple Inc. (the \u201cCompany\u201d) as of September\u00a027, 2025 and September\u00a028, 2024, the related consolidated statements of operations, comprehensive income, shareholders\u2019 equity and cash flows for each of the three years in the period ended September\u00a027, 2025, and the related notes (collectively referred to as the \u201cfinancial statements\u201d). In our opinion, the financial statements present fairly, in all material respects, the financial position of the Co",
+        "s transferred to the customer, which generally occurs when the product is shipped. Revenue allocated to product-related bundled services is deferred and recognized on a straight-line basis over the estimated period they are expected to be provided.\nFor certain long-term service arrangements, the Company has performance obligations for services it has not yet delivered. For these arrangements, the Company does not have a right to bill for the undelivered services. The Company has determined that any unbilled consideration relates entirely to the value of the undelivered services. Accordingly, the Company has not recognized revenue, and does not disclose amounts, related to these undelivered services.\nFor the sale of third-party products where the Company obtains control of the product before transferring it to the customer, the Company recognizes revenue based on the gross amount billed to customers. The Company considers multiple factors when determining whether it obtains control of third-party products, including evaluating if it can establish the price of the product, retains inventory risk for tangible products or has the responsibility for ensuring acceptability of the product. For third-party applications sold through the App Store, the Company does not obtain control of the product before transferring it to the customer. Therefore, the Company accounts for all third-party application\u2013related sales on a net basis by recognizing in Services net sales only the commission it retains.\nNet sales disaggregated by significant products and services for 2024, 2023 and 2022 were as follows (in millions):\n2024 | 2023 | 2022\niPhone | $ | 201,183 | $ | 200,583 | $ | 205,489\nMac | 29,984 | 29,357 | 40,177\niPad | 26,694 | 28,300 | 29,292\nWearables, Home and Accessories | 37,005 | 39,845 | 41,241\nServices(1) | 96,169 | 85,200 | 78,129\nTotal net sales | $ | 391,035 | $ | 383,285 | $ | 394,328\n\n(1)\nServices net sales include amortization of the deferred value of services bundle",
+        "| 39,845 | 41,241\nServices(1) | 96,169 | 85,200 | 78,129\nTotal net sales | $ | 391,035 | $ | 383,285 | $ | 394,328\n\n(1)\nServices net sales include amortization of the deferred value of services bundled in the sales price of certain products.\nTotal net sales include $\n7.7\n billion of revenue recognized in 2024 that was included in deferred revenue as of September\u00a030, 2023, $\n8.2\n billion of revenue recognized in 2023 that was included in deferred revenue as of September\u00a024, 2022, and $\n7.5\n billion of revenue recognized in 2022 that was included in deferred revenue as of September\u00a025, 2021.\nApple Inc. | 2024 Form 10-K | 35\nThe Company\u2019s proportion of net sales by disaggregated revenue source was generally consistent for each reportable segment in Note 13, \u201cSegment Information and Geographic Data\u201d for 2024, 2023 and 2022, except in Greater China, where iPhone revenue represented a moderately higher proportion of net sales.\nAs of September\u00a028, 2024 and September\u00a030, 2023, the Company had total deferred revenue of $\n12.8\n billion and $\n12.1\n\u00a0billion, respectively. As of September\u00a028, 2024, the Company expects\n64\n% of total deferred revenue to be realized in less than a year,\n25\n% within one-to-two years,\n9\n% within two-to-three years and\n2\n% in greater than three years.\nNote 3 \u2013\nEarnings Per Share\nThe following table shows the computation of basic and diluted earnings per share for 2024, 2023 and 2022 (net income in millions and shares in thousands):\n2024 | 2023 | 2022\nNumerator:\nNet income | $ | 93,736 | $ | 96,995 | $ | 99,803\nDenominator:\nWeighted-average basic shares outstanding | 15,343,783 | 15,744,231 | 16,215,963\nEffect of dilutive share-based awards | 64,312 | 68,316 | 109,856\nWeighted-average diluted shares | 15,408,095 | 15,812,547 | 16,325,819\nBasic earnings per share | $ | 6.11 | $ | 6.16 | $ | 6.15\nDiluted earnings per share | $ | 6.08 | $ | 6.13 | $ | 6.11\n\nApproximately\n24\n\u00a0million restricted stock units (\u201cRSUs\u201d) were excluded from the computation of dil",
+        ",508 | $ | 62,683\nEurope:\nNet sales | $ | 101,328 | $ | 94,294 | $ | 95,118\nOperating income | $ | 41,790 | $ | 36,098 | $ | 35,233\nGreater China:\nNet sales | $ | 66,952 | $ | 72,559 | $ | 74,200\nOperating income | $ | 27,082 | $ | 30,328 | $ | 31,153\nJapan:\nNet sales | $ | 25,052 | $ | 24,257 | $ | 25,977\nOperating income | $ | 12,454 | $ | 11,888 | $ | 12,257\nRest of Asia Pacific:\nNet sales | $ | 30,658 | $ | 29,615 | $ | 29,375\nOperating income | $ | 13,062 | $ | 12,066 | $ | 11,569\n\nA reconciliation of the Company\u2019s segment operating income to the Consolidated Statements of Operations for 2024, 2023 and 2022 is as follows (in millions):\n2024 | 2023 | 2022\nSegment operating income | $ | 162,044 | $ | 150,888 | $ | 152,895\nResearch and development expense | (31,370) | (29,915) | (26,251)\nOther corporate expenses, net(1) | (7,458) | (6,672) | (7,207)\nTotal operating income | $ | 123,216 | $ | 114,301 | $ | 119,437\n\n(1)\nIncludes general and administrative compensation costs, various nonrecurring charges, and other separately managed costs.\nThe following tables show net sales for 2024, 2023 and 2022 and long-lived assets as of September\u00a028, 2024 and September\u00a030, 2023 for countries that individually accounted for 10% or more of the respective totals, as well as aggregate amounts for the remaining countries (in millions):\n2024 | 2023 | 2022\nNet sales:\nU.S. | $ | 142,196 | $ | 138,573 | $ | 147,859\nChina(1) | 66,952 | 72,559 | 74,200\nOther countries | 181,887 | 172,153 | 172,269\nTotal net sales | $ | 391,035 | $ | 383,285 | $ | 394,328\n\n2024 | 2023\nLong-lived assets:\nU.S. | $ | 35,664 | $ | 33,276\nChina(1) | 4,797 | 5,778\nOther countries | 5,219 | 4,661\nTotal long-lived assets | $ | 45,680 | $ | 43,715\n\n(1)\nChina includes Hong Kong and Taiwan.\nApple Inc. | 2024 Form 10-K | 47\nReport of Independent Registered Public Accounting Firm\nTo the Shareholders and the Board of Directors of Apple Inc.\nOpinion on the Financial Statements\nWe have audited the accompanying consolidat"
+      ],
+      "context_metadata": [
+        {
+          "accession_number": "0000320193-24-000123",
+          "char_count": 2000,
+          "chunk_index": 0,
+          "filing_date": "2024-11-01",
+          "section_name": "management",
+          "strategy": "fixed_size",
+          "ticker": "AAPL",
+          "token_estimate": 500
+        },
+        {
+          "accession_number": "0000320193-25-000079",
+          "char_count": 2000,
+          "chunk_index": 29,
+          "filing_date": "2025-10-31",
+          "section_name": "financial statements",
+          "strategy": "fixed_size",
+          "ticker": "AAPL",
+          "token_estimate": 500
+        },
+        {
+          "accession_number": "0000320193-24-000123",
+          "char_count": 2000,
+          "chunk_index": 8,
+          "filing_date": "2024-11-01",
+          "section_name": "financial statements",
+          "strategy": "fixed_size",
+          "ticker": "AAPL",
+          "token_estimate": 500
+        },
+        {
+          "accession_number": "0000320193-24-000123",
+          "char_count": 2000,
+          "chunk_index": 9,
+          "filing_date": "2024-11-01",
+          "section_name": "financial statements",
+          "strategy": "fixed_size",
+          "ticker": "AAPL",
+          "token_estimate": 500
+        },
+        {
+          "accession_number": "0000320193-24-000123",
+          "char_count": 2000,
+          "chunk_index": 28,
+          "filing_date": "2024-11-01",
+          "section_name": "financial statements",
+          "strategy": "fixed_size",
+          "ticker": "AAPL",
+          "token_estimate": 500
+        }
+      ],
+      "ground_truth": "Apple reported net sales of $391.035 billion in fiscal year 2024."
+    },
+    {
+      "question": "What are the main risk factors Apple cited in its 2024 10-K?",
+      "answer": "The main risk factors cited by Apple in its 2024 10-K include:\n\n1. Risks associated with new ventures and significant investments that may not be successful.\n2. Risks related to retail operations, including cost management, relationships with retail partners, inventory fluctuations, and lease renewals.\n3. Legal and regulatory compliance risks from ongoing claims, legal proceedings, and government investigations.\n4. Risks from industrial accidents at suppliers and contract manufacturers.\n5. Impact of major public health issues, such as pandemics, on the global economy and demand for consumer products.\n6. Supply chain disruptions and reliance on limited sources for critical components.\n7. Competitive pressures in global markets characterized by aggressive price competition and rapid technological change.",
+      "model": "gpt-4o-mini",
+      "prompt_version": "v1",
+      "num_chunks": 5,
+      "prompt_tokens": 1863,
+      "completion_tokens": 143,
+      "total_tokens": 2006,
+      "cost_usd": 0.000365,
+      "contexts": [
+        "at all, or the imposition of onerous conditions that could delay or prevent the Company from completing a transaction or otherwise limit the Company\u2019s ability to fully realize the anticipated benefits of a transaction. These new ventures are inherently risky and may not be successful. The failure of any significant investment could materially adversely affect the Company\u2019s business, reputation, results of operations and financial condition.\nThe Company\u2019s retail stores are subject to numerous risks and uncertainties.\nThe Company\u2019s retail operations are subject to many factors that pose risks and uncertainties and could adversely impact the Company\u2019s business, results of operations and financial condition, including macroeconomic factors that could have an adverse effect on general retail activity. Other factors include the Company\u2019s ability to: manage costs associated with retail store construction and operation; manage relationships with existing retail partners; manage costs associated with fluctuations in the value of retail inventory; and obtain and renew leases in quality retail locations at a reasonable cost.\nApple Inc. | 2024 Form 10-K | 12\nLegal and Regulatory Compliance Risks\nThe Company\u2019s business, results of operations and financial condition could be adversely impacted by unfavorable results of legal proceedings or government investigations.\nThe Company is subject to various claims, legal proceedings and government investigations that have arisen in the ordinary course of business and have not yet been fully resolved, and new matters may arise in the future. In addition, agreements entered into by the Company sometimes include indemnification provisions which can subject the Company to costs and damages in the event of a claim against an indemnified third party. The number of claims, legal proceedings and government investigations involving the Company, and the alleged magnitude of such claims, proceedings and government investigations, has generally inc",
+        "s of, confidential information occur. Such incidents and other malicious attacks could materially adversely affect the Company\u2019s business, reputation, results of operations, financial condition and stock price.\nThe Company experiences malicious attacks and other attempts to gain unauthorized access to its systems on a regular basis. These attacks target the confidentiality, integrity or availability of confidential information and may disrupt normal business operations. Attacks can impair the Company\u2019s ability to attract and retain customers for its products and services, affect its stock price, damage commercial relationships, and expose the Company to litigation or government investigations, potentially resulting in penalties, fines or judgments. Globally, attacks are expected to continue accelerating in both frequency and sophistication with increasing use by actors of tools and techniques that are designed to circumvent controls, avoid detection, and remove or obfuscate forensic evidence, all of which hinders the Company\u2019s ability to identify, investigate and recover from incidents. In addition, attacks against the Company and its customers can escalate during periods of geopolitical tensions or conflict.\nAlthough malicious attacks perpetrated to gain access to confidential information, including personal information, affect many companies across various industries, the Company is at a relatively greater risk of being targeted because of its high profile and the value of the confidential information it creates, owns, manages, stores and processes.\nApple Inc. | 2025 Form 10-K | 11\nAs with all companies, the security the Company has implemented may not be sufficient for all eventualities and are vulnerable to hacking, ransomware attacks, employee error, malfeasance, system error, faulty password management or other irregularities. For example, third parties can fraudulently induce the Company\u2019s or its suppliers\u2019 and other third parties\u2019 employees or customers into",
+        "s are also subject to the risks of industrial accidents at its suppliers and contract manufacturers. While the Company\u2019s suppliers are required to maintain safe working environments and operations, an industrial accident could occur and could result in serious injuries or loss of life, disruption to the Company\u2019s business, and harm to the Company\u2019s reputation. Major public health issues, including pandemics such as the COVID-19 pandemic, have adversely affected, and could in the future materially adversely affect, the Company due to their impact on the global economy and demand for consumer products; the imposition of protective public safety measures, such as stringent employee travel restrictions and limitations on freight services and the movement of products between regions; and disruptions in the Company\u2019s operations, supply chain and sales and distribution channels, resulting in interruptions to the supply of current products and offering of existing services, and delays in production ramps of new products and development of new services.\nFollowing any interruption to its business, the Company can require substantial recovery time, experience significant expenditures to resume operations, and lose significant sales. Because the Company relies on single or limited sources for the supply and manufacture of many critical components, a business interruption affecting such sources would exacerbate any negative consequences to the Company. While the Company maintains insurance coverage for certain types of losses, such insurance coverage may be insufficient to cover all losses that may arise.\nApple Inc. | 2024 Form 10-K | 6\nGlobal markets for the Company\u2019s products and services are highly competitive and subject to rapid technological change, and the Company may be unable to compete effectively in these markets.\nThe Company\u2019s products and services are offered in highly competitive global markets characterized by aggressive price competition and resulting downward pr",
+        "l the suppliers\u2019 yields have matured or their manufacturing capacities have increased. The Company may not be able to extend or renew agreements for the supply of components on similar terms, or at all, and may not be successful in obtaining sufficient quantities from its suppliers in a timely manner, or in identifying and obtaining sufficient quantities from an alternative source. In addition, component suppliers may fail, be subject to consolidation within a particular industry, or decide to concentrate on the production of common components instead of components customized to meet the Company\u2019s requirements, further limiting the Company\u2019s ability to obtain sufficient quantities of components on commercially reasonable terms, or at all.\n\nTherefore, the Company remains subject to significant risks of supply shortages and price increases that can materially adversely affect its business, results of operations, financial condition and stock price.\nApple Inc. | 2025 Form 10-K | 8\nThe Company\u2019s products and services may be affected from time to time by design and manufacturing defects that could materially adversely affect the Company\u2019s business and result in harm to the Company\u2019s reputation.\nThe Company offers complex hardware and software products and services that can be affected by design and manufacturing defects. Sophisticated operating system software and applications, such as those offered by the Company, often have issues that can unexpectedly interfere with the intended operation of hardware or software products and services. Defects can also exist in components and products the Company purchases from third parties. Component defects could make the Company\u2019s products unsafe and create a risk of environmental or property damage and personal injury. These risks may increase as the Company\u2019s products are introduced into specialized applications, including health. In addition, the Company\u2019s service offerings can have quality issues and from time to time experienc",
+        "lic health issues, including pandemics such as the COVID-19 pandemic, have adversely affected, and could in the future materially adversely affect, the Company due to their impact on the global economy and demand for consumer products; the imposition of protective public safety measures, such as stringent employee travel restrictions and limitations on freight services and the movement of products between regions; and disruptions in the Company\u2019s operations, supply chain and sales and distribution channels, resulting in interruptions to the supply of current products and offering of existing services, and delays in production ramps of new products and development of new services.\nApple Inc. | 2025 Form 10-K | 6\nFollowing any interruption to its business, the Company can require substantial recovery time, incur significant expenditures to resume operations, and lose significant sales. Because the Company relies on single or limited sources for the supply and manufacture of many critical components, a business interruption affecting such sources would exacerbate any negative consequences to the Company. While the Company maintains insurance coverage for certain types of losses, such insurance coverage may be insufficient to cover all losses that may arise. Any of the foregoing can materially adversely affect the Company\u2019s business, results of operations, financial condition and stock price.\nGlobal markets for the Company\u2019s products and services are highly competitive and subject to rapid technological change, and the Company may be unable to compete effectively in these markets.\nThe Company\u2019s products and services are offered in highly competitive global markets. These markets are characterized by aggressive price competition, downward pressure on gross margins, continual improvement in product performance, and price sensitivity on the part of consumers and businesses. These markets are further defined by frequent introduction of new products and services, short produ"
+      ],
+      "context_metadata": [
+        {
+          "accession_number": "0000320193-24-000123",
+          "char_count": 2000,
+          "chunk_index": 23,
+          "filing_date": "2024-11-01",
+          "section_name": "risk factors",
+          "strategy": "fixed_size",
+          "ticker": "AAPL",
+          "token_estimate": 500
+        },
+        {
+          "accession_number": "0000320193-25-000079",
+          "char_count": 2000,
+          "chunk_index": 20,
+          "filing_date": "2025-10-31",
+          "section_name": "risk factors",
+          "strategy": "fixed_size",
+          "ticker": "AAPL",
+          "token_estimate": 500
+        },
+        {
+          "accession_number": "0000320193-24-000123",
+          "char_count": 2000,
+          "chunk_index": 4,
+          "filing_date": "2024-11-01",
+          "section_name": "risk factors",
+          "strategy": "fixed_size",
+          "ticker": "AAPL",
+          "token_estimate": 500
+        },
+        {
+          "accession_number": "0000320193-25-000079",
+          "char_count": 2000,
+          "chunk_index": 11,
+          "filing_date": "2025-10-31",
+          "section_name": "risk factors",
+          "strategy": "fixed_size",
+          "ticker": "AAPL",
+          "token_estimate": 500
+        },
+        {
+          "accession_number": "0000320193-25-000079",
+          "char_count": 2000,
+          "chunk_index": 5,
+          "filing_date": "2025-10-31",
+          "section_name": "risk factors",
+          "strategy": "fixed_size",
+          "ticker": "AAPL",
+          "token_estimate": 500
+        }
+      ],
+      "ground_truth": "Apple cited risks including global economic conditions, reliance on third-party manufacturers, intense competition, and dependence on key personnel."
+    },
+    {
+      "question": "How much did Microsoft spend on research and development in fiscal year 2024?",
+      "answer": "Microsoft spent $29,510 million on research and development in fiscal year 2024.",
+      "model": "gpt-4o-mini",
+      "prompt_version": "v1",
+      "num_chunks": 5,
+      "prompt_tokens": 2402,
+      "completion_tokens": 18,
+      "total_tokens": 2420,
+      "cost_usd": 0.000371,
+      "contexts": [
+        "our other products and services; and income taxes.\nHighlights from fiscal year 2025 compared with fiscal year 2024 included:\n\u2022\nMicrosoft Cloud revenue increased 23% to $168.9 billion.\n\u2022\nMicrosoft 365 Commercial products and cloud services revenue increased 14% driven by Microsoft 365 Commercial cloud revenue growth of 15%.\n\u2022\nMicrosoft 365 Consumer products and cloud services revenue increased 11% driven by Microsoft 365 Consumer cloud revenue growth of 11%.\n\u2022\nLinkedIn revenue increased 9%.\n\u2022\nDynamics products and cloud services revenue increased 15% driven by Dynamics 365 revenue growth of 19%.\n\u2022\nServer products and cloud services revenue increased 23% driven by Azure and other cloud services revenue growth of 34%.\n\u2022\nWindows OEM and Devices revenue increased 3%.\n\u2022\nXbox content and services revenue increased 16%.\n\u2022\nSearch and news advertising revenue excluding traffic acquisition costs increased 20%.\nIndustry Trends and Opportunities\nOur industry is dynamic and highly competitive, with frequent changes in both technologies and business models. Each industry shift is an opportunity to conceive new products, new technologies, or new ideas that can further transform the industry and our business. At Microsoft, we push the boundaries of what is possible through a broad range of research and development activities that seek to identify and address the changing demands of customers and users, industry trends, and competitive forces.\nMicrosoft and OpenAI maintain a long-term strategic partnership originally established in 2019. Microsoft is a major investor in OpenAI, and the companies have reciprocal revenue-sharing arrangements. We hold rights to OpenAI\u2019s intellectual property, including models and infrastructure, for integration into our products. The OpenAI API is exclusive to Azure, runs on Azure, and is available through the Azure OpenAI Service. We also have a right of first refusal on OpenAI's new capacity needs.\n\n\n35\n\nPART II\nItem 7\n\n\nEconomic Conditions, Challeng",
+        "rvices. Xbox content and services revenue increased 50% driven by 44 points of net impact from the Activision Blizzard acquisition. Xbox hardware revenue decreased 13% driven by lower volume of consoles sold.\n\n\u2022\nSearch and news advertising revenue increased $418 million or 3%. Search and news advertising revenue excluding traffic acquisition costs increased 12% driven by higher search volume.\n\n\u2022\nDevices revenue decreased $815 million or 15%.\n\nOperating income increased $2.9 billion or 17%.\n\n\u2022\nGross margin increased $6.8 billion or 23% driven by growth in Gaming, with 10 points of net impact from the Activision Blizzard acquisition, as well as growth in Windows. Gross margin percentage increased driven by sales mix shift to higher margin businesses and improvement in Devices.\n\n\u2022\nOperating expenses increased $3.9 billion or 31% driven by Gaming, with 34 points of growth from the Activision Blizzard acquisition.\n\nOPERATING EXPENSES\n\nResearch and Development\n\n\n\n(In millions, except percentages) | 2024 | 2023 | PercentageChange\nResearch and development | $ | 29,510 | $ | 27,195 | 9%\nAs a percent of revenue | 12% | 13% | (1)ppt\n\n\n\nResearch and development expenses include payroll, employee benefits, stock-based compensation expense, and other headcount-related expenses associated with product development. Research and development expenses also include third-party development and programming costs and the amortization of purchased software code and services content.\n\nFiscal Year 2024 Compared with Fiscal Year 2023\n\nResearch and development expenses increased $2.3 billion or 9% driven by Gaming, with 7 points of growth from the Activision Blizzard acquisition, and investments in cloud engineering.\n\nSales and Marketing\n\n\n\n(In millions, except percentages) | 2024 | 2023 | PercentageChange\nSales and marketing | $ | 24,456 | $ | 22,759 | 7%\nAs a percent of revenue | 10% | 11% | (1)ppt\n\n\n\n45\n\nPART II\nItem 7\n\n\nSales and marketing expenses include payroll, employee benefits, stock",
+        "f our segments.\n\n38\n\nPART II\nItem 7\n\n\nSEGMENT RESULTS OF OPERATIONS\n\n\n(In millions, except percentages) | 2025 | 2024 | PercentageChange\nProductivity and Business Processes\nRevenue | $ | 120,810 | $ | 106,820 | 13%\nCost of revenue | 22,422 | 19,611 | 14%\nOperating expenses | 28,615 | 27,548 | 4%\nOperating Income | $ | 69,773 | $ | 59,661 | 17%\nIntelligent Cloud\nRevenue | $ | 106,265 | $ | 87,464 | 21%\nCost of revenue | 40,171 | 29,611 | 36%\nOperating expenses | 21,505 | 20,040 | 7%\nOperating Income | $ | 44,589 | $ | 37,813 | 18%\nMore Personal Computing\nRevenue | $ | 54,649 | $ | 50,838 | 7%\nCost of revenue | 25,238 | 24,892 | 1%\nOperating expenses | 15,245 | 13,987 | 9%\nOperating Income | $ | 14,166 | $ | 11,959 | 18%\nTotal\nRevenue | $ | 281,724 | $ | 245,122 | 15%\nCost of revenue | 87,831 | 74,114 | 19%\nOperating expenses | 65,365 | 61,575 | 6%\nOperating Income | $ | 128,528 | $ | 109,433 | 17%\n\n\nReportable Segments\nFiscal Year 2025 Compared with Fiscal Year 2024\n\nProductivity and Business Processes\n\nRevenue increased $14.0 billion or 13%.\n\u2022\nMicrosoft 365 Commercial products and cloud services revenue increased $10.8 billion or 14%. Microsoft 365 Commercial cloud revenue grew 15% with Microsoft 365 Commercial seat growth of 6% driven by small and medium businesses and frontline worker offerings, as well as growth in revenue per user. Microsoft 365 Commercial products revenue grew 7% driven by the Windows Commercial on-premises components of Microsoft 365 suite sales and an increase in Office transactional purchasing with the launch of Office 2024.\n\u2022\nMicrosoft 365 Consumer products and cloud services revenue increased $756 million or 11%. Microsoft 365 Consumer cloud revenue grew 11% driven by Microsoft 365 Consumer subscriber growth of 8% to 89.0 million, as well as growth in revenue per user from the price increase announced in January 2025.\n\u2022\nLinkedIn revenue increased $1.4 billion or 9% with growth across all lines of business.\n\u2022\nDynamics products and cloud ser",
+        "enue from Xbox content and services, comprising first- and third-party content (including games and in-game content), Xbox Game Pass and other subscriptions, Xbox Cloud Gaming, advertising, and other cloud services\nSearch and news advertising revenue (ex TAC) growth | Revenue from search and news advertising excluding traffic acquisition costs (\u201cTAC\u201d) paid to Bing Ads network publishers and news partners\n\nSUMMARY RESULTS OF OPERATIONS\n\n\n(In millions, except percentages and per share amounts) | 2025 | 2024 | PercentageChange\nRevenue | $ | 281,724 | $ | 245,122 | 15%\nGross margin | 193,893 | 171,008 | 13%\nOperating income | 128,528 | 109,433 | 17%\nNet income | 101,832 | 88,136 | 16%\nDiluted earnings per share | 13.64 | 11.80 | 16%\n\n\nFiscal Year 2025 Compared with Fiscal Year 2024\nRevenue increased $36.6 billion or 15% with growth across each of our segments. Intelligent Cloud revenue increased driven by Azure. Productivity and Business Processes revenue increased driven by Microsoft 365 Commercial cloud. More Personal Computing revenue increased driven by Gaming and Search and news advertising.\nCost of revenue increased $13.7 billion or 19% driven by growth in Microsoft Cloud.\nGross margin increased $22.9 billion or 13% with growth across each of our segments.\n\n\u2022\nGross margin percentage decreased slightly driven by Intelligent Cloud, offset in part by More Personal Computing.\n\u2022\nMicrosoft Cloud gross margin percentage decreased to 69% driven by the impact of scaling our AI infrastructure, offset in part by efficiency gains in Azure.\nOperating expenses increased $3.8 billion or 6% driven by investments in cloud and AI engineering and Gaming, including the impact of the Activision Blizzard acquisition.\nOperating income increased $19.1 billion or 17% with growth across each of our segments.\n\n38\n\nPART II\nItem 7\n\n\nSEGMENT RESULTS OF OPERATIONS\n\n\n(In millions, except percentages) | 2025 | 2024 | PercentageChange\nProductivity and Business Processes\nRevenue | $ | 120,810 | $ |",
+        "FINANCIAL CONDITION AND RESULTS OF OPERATIONS\nThe following Management\u2019s Discussion and Analysis of Financial Condition and Results of Operations (\u201cMD&A\u201d) is intended to help the reader understand the results of operations and financial condition of Microsoft Corporation. MD&A is provided as a supplement to, and should be read in conjunction with, our consolidated financial statements and the accompanying Notes to Financial Statements (Part II, Item 8 of this Form 10-K). This section generally discusses the results of our operations for the year ended June 30, 2025 compared to the year ended June 30, 2024. For a discussion of the year ended June 30, 2024 compared to the year ended June 30, 2023, please refer to Part II, Item 7, \u201cManagement\u2019s Discussion and Analysis of Financial Condition and Results of Operations\u201d in our Annual Report on Form 10-K for the year ended June 30, 2024 and our Form 8-K filed on December 3, 2024.\nOVERVIEW\nMicrosoft is a technology company committed to making digital technology and artificial intelligence (\u201cAI\u201d) available broadly and doing so responsibly, with a mission to empower every person and every organization on the planet to achieve more. We create platforms and tools, powered by AI, that deliver innovative solutions that meet the evolving needs of our customers.\n\nWe generate revenue by offering a wide range of cloud-based solutions, content, and other services to people and businesses; licensing and supporting an array of software products; delivering relevant online advertising to a global audience; and designing and selling devices. Our most significant expenses are related to compensating employees; supporting and investing in our cloud-based services, including datacenter operations; designing, manufacturing, marketing, and selling our other products and services; and income taxes.\nHighlights from fiscal year 2025 compared with fiscal year 2024 included:\n\u2022\nMicrosoft Cloud revenue increased 23% to $168.9 billion.\n\u2022\nMicrosoft 365"
+      ],
+      "context_metadata": [
+        {
+          "accession_number": "0000950170-25-100235",
+          "char_count": 2000,
+          "chunk_index": 1,
+          "filing_date": "2025-07-30",
+          "section_name": "management",
+          "strategy": "fixed_size",
+          "ticker": "MSFT",
+          "token_estimate": 500
+        },
+        {
+          "accession_number": "0000950170-24-087843",
+          "char_count": 2000,
+          "chunk_index": 11,
+          "filing_date": "2024-07-30",
+          "section_name": "management",
+          "strategy": "fixed_size",
+          "ticker": "MSFT",
+          "token_estimate": 500
+        },
+        {
+          "accession_number": "0000950170-25-100235",
+          "char_count": 2000,
+          "chunk_index": 8,
+          "filing_date": "2025-07-30",
+          "section_name": "management",
+          "strategy": "fixed_size",
+          "ticker": "MSFT",
+          "token_estimate": 500
+        },
+        {
+          "accession_number": "0000950170-25-100235",
+          "char_count": 2000,
+          "chunk_index": 7,
+          "filing_date": "2025-07-30",
+          "section_name": "management",
+          "strategy": "fixed_size",
+          "ticker": "MSFT",
+          "token_estimate": 500
+        },
+        {
+          "accession_number": "0000950170-25-100235",
+          "char_count": 2000,
+          "chunk_index": 0,
+          "filing_date": "2025-07-30",
+          "section_name": "management",
+          "strategy": "fixed_size",
+          "ticker": "MSFT",
+          "token_estimate": 500
+        }
+      ],
+      "ground_truth": "Microsoft reported research and development expenses of approximately $29.5 billion in fiscal year 2024."
+    },
+    {
+      "question": "What is JPMorgan Chase's primary business segments?",
+      "answer": "JPMorgan Chase's primary business segments are Consumer & Community Banking, Commercial & Investment Bank, and Asset & Wealth Management.",
+      "model": "gpt-4o-mini",
+      "prompt_version": "v1",
+      "num_chunks": 5,
+      "prompt_tokens": 2130,
+      "completion_tokens": 25,
+      "total_tokens": 2155,
+      "cost_usd": 0.000334,
+      "contexts": [
+        "deposits down 1%; client investment assets up 17%\u2022Average loans up 1%; Card Services net charge-off rate of 3.31%\u2022Debit and credit card sales volume(a)up 7%\u2022Active mobile customers(b)up 7%\nCIBROE 18% | \u2022Investment Banking fees up 7%;  #1 ranking for Global Investment Banking fees with 8.4% wallet share for the year\u2022Markets revenue up 19%, with Fixed Income Markets up 12% and Equity Markets up 33%\u2022Average Banking & Payments loans(c)flat; average client deposits(d)up 14%\nAWMROE 40% | \u2022Assets under management (\"AUM\") of $4.8 trillion, up 18%\u2022Average loans up 8%; average deposits up 4%\n\n(a)\nExcludes Commercial Card.\n(b)\nUsers of all mobile platforms who have logged in within the past 90 days.\n(c)\nOn January 1, 2025, $5.6 billion of loans were realigned from Global Corporate Banking to Fixed Income Markets.\n(d)\nRepresents client deposits and other third-party liabilities pertaining to the Payments and Securities Services businesses.\nRefer to the Business Segment & Corporate Results on pages 62\u201382 for a detailed discussion of results by business segment.\nCredit provided and capital raised\nJPMorganChase continues to support consumers, businesses and communities around the globe. The Firm provided new and renewed credit and raised capital for wholesale and consumer clients during 2025, consisting of approximately:\n$3.3 trillion | Total credit provided and capital raised (including loans and commitments)\n$280billion | Credit for consumers\n$33billion | Credit for U.S. small businesses\n$2.9 trillion | Credit and capital for corporations and non-U.S. government entities(a)\n$76billion | Credit and capital for nonprofit and U.S. government entities(b)\n\n(a)\nIncludes Individuals and Individual Entities primarily consisting of Global Private Bank clients within AWM.\n(b)\nIncludes states, municipalities, hospitals and universities.\nJPMorgan Chase & Co./2025 Form 10-K | 49\n\nRecent events\n\u2022\nOn December 8, 2025, JPMorganChase announced that Todd A. Combs had resigned from the Firm\u2019s Boa",
+        "U.S.\u201d), with operations worldwide. JPMorganChase had $4.4 trillion in assets and $362.4 billion in stockholders\u2019 equity as of December\u00a031, 2025. The Firm is a leader in investment banking, financial services for consumers and small businesses, commercial banking, financial transaction processing and asset management. Under the J.P. Morgan and Chase brands, the Firm serves millions of customers, predominantly in the U.S., and many of the world\u2019s most prominent corporate, institutional and government clients globally.\nJPMorganChase\u2019s principal bank subsidiary is JPMorgan Chase Bank, National Association (\u201cJPMorgan Chase Bank, N.A.\u201d), a national banking association with U.S. branches in 48 states and Washington, D.C. JPMorganChase\u2019s principal non-bank subsidiary is J.P. Morgan Securities LLC (\u201cJ.P. Morgan Securities\u201d), a U.S. broker-dealer. The bank and non-bank subsidiaries of JPMorganChase operate nationally as well as through overseas branches and subsidiaries, representative offices and subsidiary foreign banks. The Firm\u2019s principal operating subsidiaries outside the U.S. are J.P. Morgan Securities plc and J.P. Morgan SE (\u201cJPMSE\u201d), which are subsidiaries of JPMorgan Chase Bank, N.A. and are based in the United Kingdom (\u201cU.K.\u201d) and Germany, respectively.\nFor management reporting purposes, the Firm has three reportable business segments \u2013 Consumer & Community Banking (\u201cCCB\u201d), Commercial & Investment Bank (\u201cCIB\u201d) and Asset & Wealth Management (\u201cAWM\u201d) \u2013 with the remaining activities in Corporate. The Firm's consumer business segment is CCB, and the Firm's wholesale business segments are CIB and AWM. Refer to Business Segment & Corporate Results on pages 62\u201382 and Note 32 for a description of the Firm\u2019s reportable business segments and the products and services that they provide to their respective client bases, as well as a description of Corporate activities.\nThe Firm\u2019s website is www.jpmorganchase.com. JPMorganChase makes available on its website, free of charge, ann",
+        "services that JPMorganChase offers\n\u2022\nthe geographies in which it operates\n\u2022\nthe types of clients and customers that it serves\n\u2022\nthe businesses that it acquires or in which it invests\n\u2022\nthe counterparties with which it does business\n\u2022\nthe technologies that it adopts or in which it invests, and\n\u2022\nthe methods, distribution channels and third-party service providers by or through which it offers products and services.\nThe values and growth prospects of JPMorganChase\u2019s businesses could suffer and its earnings could decline if management makes strategic choices that prove to be incorrect, are based on incomplete, inaccurate or fraudulent information, do not accurately assess the competitive landscape and industry trends, or fail to address changing regulatory and market environments or the expectations of clients, customers, investors, employees and other stakeholders.\nJPMorganChase\u2019s growth prospects also depend on management\u2019s ability to develop and execute effective business plans to address these strategic priorities, both over near term and longer time horizons. Management\u2019s effectiveness in this regard will affect JPMorganChase\u2019s ability to develop its resources, control expenses and return capital to shareholders. Each of these objectives could be adversely affected by any failure by management to:\n\u2022\ndevise effective business plans and strategies\n\u2022\noffer products and services that meet expectations of clients and customers\n\u2022\nallocate capital in a manner that promotes long-term stability to enable JPMorganChase to build and invest in market-leading businesses\n\u2022\nappropriately assess and monitor principal investments\n\u2022\nconduct appropriate due diligence on prospective business acquisitions or investments, or effectively integrate newly-acquired businesses\n\u2022\nappropriately address concerns of clients, customers, investors, employees, regulators and other stakeholders\n\u2022\nmaintain an effective risk management framework\n\u2022\nreact quickly to changes in market conditions or stru",
+        "ody, estate planning, lending, deposits and investment management to high net worth clients.\nThe majority of AWM\u2019s client assets are in actively managed portfolios.\nCorporate\nCorporate consists of Treasury and Chief Investment Office (\u201cCIO\u201d) and Other Corporate. Treasury and CIO is predominantly responsible for measuring, monitoring, reporting and managing the Firm\u2019s liquidity, funding, capital, structural interest rate and foreign exchange risks.\nOther Corporate includes staff functions and expense that is centrally managed as well as certain Firm initiatives and activities not solely aligned to a specific LOB. The major Other Corporate functions include Real Estate, Technology, Legal, Corporate Finance, Human Resources, Internal Audit, Risk Management, Compliance, Control Management, Corporate Responsibility and various Other Corporate groups.\n306 | JPMorgan Chase & Co./2025 Form 10-K\n\nDescription of business segment reporting methodology\nResults of the reportable business segments are intended to present each segment as if it were a stand-alone business. The management reporting process that derives business segment results includes the allocation of certain income and expense items. The Firm periodically assesses the assumptions, methodologies and reporting classifications used for segment reporting, and therefore further refinements may be implemented in future periods. The Firm also assesses the level of capital required for each LOB on at least an annual basis. The Firm\u2019s LOBs also provide various business metrics which are utilized by the Firm and its investors and analysts in assessing performance.\nRevenue sharing\nWhen business segments or businesses within each segment join efforts to sell products and services to the Firm\u2019s clients and customers, the participating businesses may agree to share revenue from those transactions. Revenue is generally recognized in the segment responsible for the related product or service, with allocations to the other segmen",
+        "r the U.K. were approximately $\n449\n\u00a0billion, $\n369\n\u00a0billion and $\n352\n\u00a0billion at December\u00a031, 2025, 2024 and 2023, respectively.\nJPMorgan Chase & Co./2025 Form 10-K | 305\n\nNotes to consolidated financial statements\nNote 32 \u2013\nBusiness segments & Corporate\nThe Firm is managed on an LOB basis. The Firm has\nthree\n reportable business segments \u2013 Consumer & Community Banking, Commercial & Investment Bank, and Asset & Wealth Management \u2013 with the remaining activities in Corporate.\nThe business segments are determined based on the products and services provided, or the type of customers and clients served, and they reflect the manner in which financial information is evaluated by the Firm\u2019s Operating Committee, whose members act collectively as the Firm\u2019s chief operating decision maker. Segment results are presented on a managed basis.\nThe following is a description of each of the Firm\u2019s reportable business segments, and the products and services that they provide to their respective client bases, as well as a description of Corporate activities.\nConsumer & Community Banking\nConsumer & Community Banking offers products and services to consumers and small businesses through bank branches, ATMs, digital (including mobile and online) and telephone banking. CCB is organized into Banking & Wealth Management (including Consumer Banking, Business Banking and J.P. Morgan Wealth Management), Home Lending (including Home Lending Production, Home Lending Servicing and Real Estate Portfolios) and Card Services & Auto. Banking & Wealth Management offers deposit, investment and lending products, cash management, payments and services. Home Lending includes mortgage origination and servicing activities, as well as portfolios consisting of residential mortgages and home equity loans. Card Services issues credit cards and offers payment solutions, travel services, merchant offers and lifestyle benefits. Auto originates and services auto loans and leases.\nCommercial & Investment Bank\nThe C"
+      ],
+      "context_metadata": [
+        {
+          "accession_number": "0001628280-26-008131",
+          "char_count": 2000,
+          "chunk_index": 20,
+          "filing_date": "2026-02-13",
+          "section_name": "certain relationships",
+          "strategy": "fixed_size",
+          "ticker": "JPM",
+          "token_estimate": 500
+        },
+        {
+          "accession_number": "0001628280-26-008131",
+          "char_count": 2000,
+          "chunk_index": 14,
+          "filing_date": "2026-02-13",
+          "section_name": "certain relationships",
+          "strategy": "fixed_size",
+          "ticker": "JPM",
+          "token_estimate": 500
+        },
+        {
+          "accession_number": "0001628280-26-008131",
+          "char_count": 2000,
+          "chunk_index": 51,
+          "filing_date": "2026-02-13",
+          "section_name": "risk factors",
+          "strategy": "fixed_size",
+          "ticker": "JPM",
+          "token_estimate": 500
+        },
+        {
+          "accession_number": "0001628280-26-008131",
+          "char_count": 2000,
+          "chunk_index": 529,
+          "filing_date": "2026-02-13",
+          "section_name": "certain relationships",
+          "strategy": "fixed_size",
+          "ticker": "JPM",
+          "token_estimate": 500
+        },
+        {
+          "accession_number": "0001628280-26-008131",
+          "char_count": 2000,
+          "chunk_index": 527,
+          "filing_date": "2026-02-13",
+          "section_name": "certain relationships",
+          "strategy": "fixed_size",
+          "ticker": "JPM",
+          "token_estimate": 500
+        }
+      ],
+      "ground_truth": "JPMorgan Chase operates through four segments: Consumer & Community Banking, Commercial Banking, Corporate & Investment Bank, and Asset & Wealth Management."
+    },
+    {
+      "question": "What was Microsoft's cloud revenue in 2024?",
+      "answer": "Microsoft's cloud revenue in 2024 was $137.4 billion.",
+      "model": "gpt-4o-mini",
+      "prompt_version": "v1",
+      "num_chunks": 5,
+      "prompt_tokens": 2727,
+      "completion_tokens": 15,
+      "total_tokens": 2742,
+      "cost_usd": 0.000418,
+      "contexts": [
+        "our other products and services; and income taxes.\nHighlights from fiscal year 2025 compared with fiscal year 2024 included:\n\u2022\nMicrosoft Cloud revenue increased 23% to $168.9 billion.\n\u2022\nMicrosoft 365 Commercial products and cloud services revenue increased 14% driven by Microsoft 365 Commercial cloud revenue growth of 15%.\n\u2022\nMicrosoft 365 Consumer products and cloud services revenue increased 11% driven by Microsoft 365 Consumer cloud revenue growth of 11%.\n\u2022\nLinkedIn revenue increased 9%.\n\u2022\nDynamics products and cloud services revenue increased 15% driven by Dynamics 365 revenue growth of 19%.\n\u2022\nServer products and cloud services revenue increased 23% driven by Azure and other cloud services revenue growth of 34%.\n\u2022\nWindows OEM and Devices revenue increased 3%.\n\u2022\nXbox content and services revenue increased 16%.\n\u2022\nSearch and news advertising revenue excluding traffic acquisition costs increased 20%.\nIndustry Trends and Opportunities\nOur industry is dynamic and highly competitive, with frequent changes in both technologies and business models. Each industry shift is an opportunity to conceive new products, new technologies, or new ideas that can further transform the industry and our business. At Microsoft, we push the boundaries of what is possible through a broad range of research and development activities that seek to identify and address the changing demands of customers and users, industry trends, and competitive forces.\nMicrosoft and OpenAI maintain a long-term strategic partnership originally established in 2019. Microsoft is a major investor in OpenAI, and the companies have reciprocal revenue-sharing arrangements. We hold rights to OpenAI\u2019s intellectual property, including models and infrastructure, for integration into our products. The OpenAI API is exclusive to Azure, runs on Azure, and is available through the Azure OpenAI Service. We also have a right of first refusal on OpenAI's new capacity needs.\n\n\n35\n\nPART II\nItem 7\n\n\nEconomic Conditions, Challeng",
+        "other than the United States accounted for more than 10% of revenue for fiscal years 2025, 2024, or 2023.\n\nRevenue, classified by the major geographic areas in which our customers were located, was as follows:\n\n\n(In millions)\nYear Ended June 30, | 2025 | 2024 | 2023\nUnited States(a) | $ | 144,546 | $ | 124,704 | $ | 106,744\nOther countries | 137,178 | 120,418 | 105,171\nTotal | $ | 281,724 | $ | 245,122 | $ | 211,915\n\n\n(a)\nIncludes billings to OEMs and certain multinational organizations because of the nature of these businesses and the impracticability of determining the geographic source of the revenue.\n\n\n84\n\nPART II\nItem 8\n\n\nRevenue, classified by significant product and service offerings, was as follows:\n\n\n\n(In millions)\nYear Ended June 30, | 2025 | 2024 | 2023\nServer products and cloud services | $ | 98,435 | $ | 79,828 | $ | 65,007\nMicrosoft 365 Commercial products and cloud services | 87,767 | 76,969 | 66,949\nGaming | 23,455 | 21,503 | 15,466\nLinkedIn | 17,812 | 16,372 | 14,989\nWindows and Devices | 17,314 | 17,026 | 17,147\nSearch and news advertising | 13,878 | 12,306 | 12,125\nDynamics products and cloud services | 7,827 | 6,831 | 5,796\nEnterprise and partner services | 7,760 | 7,594 | 7,900\nMicrosoft 365 Consumer products and cloud services | 7,404 | 6,648 | 6,417\nOther | 72 | 45 | 119\nTotal | $ | 281,724 | $ | 245,122 | $ | 211,915\n\n\nOur Microsoft Cloud revenue, which includes Microsoft 365 Commercial cloud, Azure and other cloud services, the commercial portion of LinkedIn, and Dynamics 365, was $\n168.9\n billion, $\n137.7\n billion, and $\n111.6\n billion in fiscal years 2025, 2024, and 2023, respectively. These amounts are included in Microsoft 365 Commercial products and cloud services, Server products and cloud services, LinkedIn, and Dynamics products and cloud services in the table above.\nAssets are not allocated to segments for internal reporting presentations. A portion of amortization and depreciation is included with various other costs in an overhea",
+        "34,189 | $ | 29,690\nIntelligent Cloud | 49,584 | 37,884 | 33,203\nMore Personal Computing | 19,309 | 16,450 | 20,490\nTotal | $ | 109,433 | $ | 88,523 | $ | 83,383\n\n\nNo sales to an individual customer or country other than the United States accounted for more than 10% of revenue for fiscal years 2024, 2023, or 2022.\n\nRevenue, classified by the major geographic areas in which our customers were located, was as follows:\n\n\n(In millions)\nYear Ended June 30, | 2024 | 2023 | 2022\nUnited States(a) | $ | 124,704 | $ | 106,744 | $ | 100,218\nOther countries | 120,418 | 105,171 | 98,052\nTotal | $ | 245,122 | $ | 211,915 | $ | 198,270\n\n\n(a)\nIncludes billings to OEMs and certain multinational organizations because of the nature of these businesses and the impracticability of determining the geographic source of the revenue.\n\n92\n\nPART II\nItem 8\n\nRevenue, classified by significant product and service offerings, was as follows:\n\n\n\n(In millions)\nYear Ended June 30, | 2024 | 2023 | 2022\nServer products and cloud services | $ | 97,726 | $ | 79,970 | $ | 67,350\nOffice products and cloud services | 54,875 | 48,848 | 44,970\nWindows | 23,244 | 21,507 | 24,732\nGaming | 21,503 | 15,466 | 16,230\nLinkedIn | 16,372 | 14,989 | 13,631\nSearch and news advertising | 12,576 | 12,158 | 11,526\nEnterprise and partner services | 7,594 | 7,900 | 7,605\nDynamics products and cloud services | 6,481 | 5,437 | 4,687\nDevices | 4,706 | 5,521 | 7,306\nOther | 45 | 119 | 233\nTotal | $ | 245,122 | $ | 211,915 | $ | 198,270\n\n\nWe have recast certain prior period amounts to conform to the way we internally manage and monitor our business.\nOur Microsoft Cloud revenue, which includes Azure and other cloud services, Office 365 Commercial, the commercial portion of LinkedIn, Dynamics 365, and other commercial cloud properties, was $\n137.4\n billion, $\n111.6\n billion, and $\n91.4\n billion in fiscal years 2024, 2023, and 2022, respectively. These amounts are primarily included in Server products and cloud services, Office pro",
+        "rowth in revenue per user from the price increase announced in January 2025.\n\u2022\nLinkedIn revenue increased $1.4 billion or 9% with growth across all lines of business.\n\u2022\nDynamics products and cloud services revenue increased $996 million or 15% driven by growth in Dynamics 365, offset in part by a decline in Dynamics on-premises products. Dynamics 365 revenue grew 19% with growth across all workloads.\nOperating income increased $10.1 billion or 17%.\n\u2022\nCost of revenue increased $2.8 billion or 14% driven by growth in Microsoft 365 Commercial cloud.\n\u2022\nGross margin increased $11.2 billion or 13% driven by growth in Microsoft 365 Commercial cloud. Gross margin percentage decreased slightly primarily driven by the impact of scaling our AI infrastructure, offset in part by efficiency gains in Microsoft 365 Commercial cloud.\n\u2022\nOperating expenses increased $1.1 billion or 4% driven by investments in cloud and AI engineering and commercial sales.\n\n39\n\nPART II\nItem 7\n\n\nIntelligent Cloud\n\nRevenue increased $18.8 billion or 21%.\n\u2022\nServer products and cloud services revenue increased $18.6 billion or 23% driven by Azure and other cloud services. Azure and other cloud services revenue grew 34% driven by demand for our portfolio of services. Server products revenue decreased 3% driven by a decrease in transactional purchasing with continued customer shift to cloud offerings.\n\u2022\nEnterprise and partner services revenue increased $166 million or 2% driven by growth in Enterprise Support Services, offset in part by a decline in Industry Solutions.\nOperating income increased $6.8 billion or 18%.\n\u2022\nCost of revenue increased $10.6 billion or 36% driven by growth in Azure.\n\u2022\nGross margin increased $8.2 billion or 14% driven by growth in Azure. Gross margin percentage decreased driven by the impact of scaling our AI infrastructure, offset in part by efficiency gains in Azure.\n\u2022\nOperating expenses increased $1.5 billion or 7% driven by investments in cloud and AI engineering.\nMore Personal Co",
+        "f our segments.\n\n38\n\nPART II\nItem 7\n\n\nSEGMENT RESULTS OF OPERATIONS\n\n\n(In millions, except percentages) | 2025 | 2024 | PercentageChange\nProductivity and Business Processes\nRevenue | $ | 120,810 | $ | 106,820 | 13%\nCost of revenue | 22,422 | 19,611 | 14%\nOperating expenses | 28,615 | 27,548 | 4%\nOperating Income | $ | 69,773 | $ | 59,661 | 17%\nIntelligent Cloud\nRevenue | $ | 106,265 | $ | 87,464 | 21%\nCost of revenue | 40,171 | 29,611 | 36%\nOperating expenses | 21,505 | 20,040 | 7%\nOperating Income | $ | 44,589 | $ | 37,813 | 18%\nMore Personal Computing\nRevenue | $ | 54,649 | $ | 50,838 | 7%\nCost of revenue | 25,238 | 24,892 | 1%\nOperating expenses | 15,245 | 13,987 | 9%\nOperating Income | $ | 14,166 | $ | 11,959 | 18%\nTotal\nRevenue | $ | 281,724 | $ | 245,122 | 15%\nCost of revenue | 87,831 | 74,114 | 19%\nOperating expenses | 65,365 | 61,575 | 6%\nOperating Income | $ | 128,528 | $ | 109,433 | 17%\n\n\nReportable Segments\nFiscal Year 2025 Compared with Fiscal Year 2024\n\nProductivity and Business Processes\n\nRevenue increased $14.0 billion or 13%.\n\u2022\nMicrosoft 365 Commercial products and cloud services revenue increased $10.8 billion or 14%. Microsoft 365 Commercial cloud revenue grew 15% with Microsoft 365 Commercial seat growth of 6% driven by small and medium businesses and frontline worker offerings, as well as growth in revenue per user. Microsoft 365 Commercial products revenue grew 7% driven by the Windows Commercial on-premises components of Microsoft 365 suite sales and an increase in Office transactional purchasing with the launch of Office 2024.\n\u2022\nMicrosoft 365 Consumer products and cloud services revenue increased $756 million or 11%. Microsoft 365 Consumer cloud revenue grew 11% driven by Microsoft 365 Consumer subscriber growth of 8% to 89.0 million, as well as growth in revenue per user from the price increase announced in January 2025.\n\u2022\nLinkedIn revenue increased $1.4 billion or 9% with growth across all lines of business.\n\u2022\nDynamics products and cloud ser"
+      ],
+      "context_metadata": [
+        {
+          "accession_number": "0000950170-25-100235",
+          "char_count": 2000,
+          "chunk_index": 1,
+          "filing_date": "2025-07-30",
+          "section_name": "management",
+          "strategy": "fixed_size",
+          "ticker": "MSFT",
+          "token_estimate": 500
+        },
+        {
+          "accession_number": "0000950170-25-100235",
+          "char_count": 2000,
+          "chunk_index": 80,
+          "filing_date": "2025-07-30",
+          "section_name": "management",
+          "strategy": "fixed_size",
+          "ticker": "MSFT",
+          "token_estimate": 500
+        },
+        {
+          "accession_number": "0000950170-24-087843",
+          "char_count": 2000,
+          "chunk_index": 86,
+          "filing_date": "2024-07-30",
+          "section_name": "management",
+          "strategy": "fixed_size",
+          "ticker": "MSFT",
+          "token_estimate": 500
+        },
+        {
+          "accession_number": "0000950170-25-100235",
+          "char_count": 2000,
+          "chunk_index": 9,
+          "filing_date": "2025-07-30",
+          "section_name": "management",
+          "strategy": "fixed_size",
+          "ticker": "MSFT",
+          "token_estimate": 500
+        },
+        {
+          "accession_number": "0000950170-25-100235",
+          "char_count": 2000,
+          "chunk_index": 8,
+          "filing_date": "2025-07-30",
+          "section_name": "management",
+          "strategy": "fixed_size",
+          "ticker": "MSFT",
+          "token_estimate": 500
+        }
+      ],
+      "ground_truth": "Microsoft's Intelligent Cloud segment revenue was approximately $87.9 billion in fiscal year 2024."
+    },
+    {
+      "question": "How many shares did Apple repurchase in fiscal year 2024?",
+      "answer": "Apple repurchased 499 million shares of its common stock in fiscal year 2024.",
+      "model": "gpt-4o-mini",
+      "prompt_version": "v1",
+      "num_chunks": 5,
+      "prompt_tokens": 2868,
+      "completion_tokens": 18,
+      "total_tokens": 2886,
+      "cost_usd": 0.000441,
+      "contexts": [
+        "-K | 43\nAs of September\u00a028, 2024 and September\u00a030, 2023, the fair value of the Company\u2019s Notes, based on Level 2 inputs, was $\n88.4\n billion and $\n90.8\n billion, respectively.\nNote 10 \u2013\nShareholders\u2019 Equity\nShare Repurchase Program\nDuring 2024, the Company repurchased\n499\n million shares of its common stock for $\n95.0\n billion. The Company\u2019s share repurchase programs do not obligate the Company to acquire a minimum amount of shares. Under the programs, shares may be repurchased in privately negotiated or open market transactions, including under plans complying with Rule 10b5-1 under the Exchange Act.\nShares of Common Stock\nThe following table shows the changes in shares of common stock for 2024, 2023 and 2022 (in thousands):\n2024 | 2023 | 2022\nCommon stock outstanding, beginning balances | 15,550,061 | 15,943,425 | 16,426,786\nCommon stock repurchased | (499,372) | (471,419) | (568,589)\nCommon stock issued, net of shares withheld for employee taxes | 66,097 | 78,055 | 85,228\nCommon stock outstanding, ending balances | 15,116,786 | 15,550,061 | 15,943,425\n\nNote 11 \u2013\nShare-Based Compensation\n2022 Employee Stock Plan\nThe Apple Inc. 2022 Employee Stock Plan (the \u201c2022 Plan\u201d) is a shareholder-approved plan that provides for broad-based equity grants to employees, including executive officers, and permits the granting of RSUs, stock grants, performance-based awards, stock options and stock appreciation rights. RSUs granted under the 2022 Plan generally vest over\nfour years\n, based on continued employment, and are settled upon vesting in shares of the Company\u2019s common stock on a\none\n-for-one basis. All RSUs granted under the 2022 Plan have dividend equivalent rights, which entitle holders of RSUs to the same dividend value per share as holders of common stock. A maximum of approximately\n1.3\n billion shares were authorized for issuance pursuant to 2022 Plan awards at the time the plan was approved on March 4, 2022.\n2014 Employee Stock Plan\nThe Apple Inc. 2014 Employee Stock",
+        "pany uses interest rate swaps to effectively convert the fixed interest rates to floating interest rates on a portion of these notes. Additionally, to manage foreign exchange rate risk on certain of its foreign currency\u2013denominated notes, the Company uses cross-currency swaps to effectively convert these notes to U.S. dollar\u2013denominated notes.\nThe effective interest rates for the Notes include the interest on the Notes, amortization of the discount or premium and, if applicable, adjustments related to hedging.\nThe future principal payments for the Company\u2019s Notes as of September\u00a027, 2025, are as follows (in millions):\n2026 | $ | 12,393\n2027 | 10,078\n2028 | 9,300\n2029 | 5,235\n2030 | 4,972\nThereafter | 49,303\nTotal term debt principal | $ | 91,281\n\nAs of September\u00a027, 2025 and September\u00a028, 2024, the fair value of the Company\u2019s Notes, based on Level 2 inputs, was $\n80.4\n billion and $\n88.4\n billion, respectively.\nNote 10 \u2013\nShareholders\u2019 Equity\nShare Repurchase Program\nDuring 2025, the Company repurchased\n402\n million shares of its common stock for $\n89.3\n billion. The Company\u2019s share repurchase programs do not obligate the Company to acquire a minimum amount of shares. Under the programs, shares may be repurchased in privately negotiated or open market transactions, including under plans complying with Rule 10b5-1 under the Exchange Act.\nApple Inc. | 2025 Form 10-K | 44\nShares of Common Stock\nThe following table shows the changes in shares of common stock for 2025, 2024 and 2023 (in thousands):\n2025 | 2024 | 2023\nCommon stock outstanding, beginning balances | 15,116,786 | 15,550,061 | 15,943,425\nCommon stock repurchased | (401,672) | (499,372) | (471,419)\nCommon stock issued, net of shares withheld for employee taxes | 58,146 | 66,097 | 78,055\nCommon stock outstanding, ending balances | 14,773,260 | 15,116,786 | 15,550,061\n\nNote 11 \u2013\nShare-Based Compensation\n2022 Employee Stock Plan\nThe Apple Inc. 2022 Employee Stock Plan (\u201c2022 Plan\u201d) is a shareholder-approved plan t",
+        "proved a share repurchase program authorizing up to $\n60.0\n billion in share repurchases. This share repurchase program commenced in April 2025, following completion of the program approved on September 14, 2021, has no expiration date, and may be terminated at any time. As of June 30, 2025, $\n57.3\n billion remained of this $\n60.0\n billion share repurchase program.\nWe repurchased the following shares of common stock under the share repurchase programs:\n\n\n\n(In millions) | Shares | Amount | Shares | Amount | Shares | Amount\nYear Ended June 30, | 2025 | 2024 | 2023\nFirst Quarter | 7 | $ | 2,800 | 11 | $ | 3,560 | 17 | $ | 4,600\nSecond Quarter | 8 | 3,500 | 7 | 2,800 | 20 | 4,600\nThird Quarter | 8 | 3,500 | 7 | 2,800 | 18 | 4,600\nFourth Quarter | 8 | 3,200 | 7 | 2,800 | 14 | 4,600\nTotal | 31 | $ | 13,000 | 32 | $ | 11,960 | 69 | $ | 18,400\n\n\nAll repurchases were made using cash resources. Shares repurchased during the fourth quarter of fiscal year 2025 were under the share repurchase programs approved on September 14, 2021 and September 16, 2024. All other shares repurchased were under the share repurchase program approved on September 14, 2021. The above table excludes shares repurchased to settle employee tax withholding related to the vesting of stock awards of $\n5.4\n billion, $\n5.3\n billion, and $\n3.8\n billion for fiscal years 2025, 2024, and 2023, respectively.\n\n79\n\nPART II\nItem 8\n\n\nDividends\n\nOur Board of Directors declared the following dividends:\n\n\n\nDeclaration Date | Record Date | Payment Date | DividendPer Share | Amount\nFiscal Year 2025 | (In millions)\nSeptember 16, 2024 | November 21, 2024 | December 12, 2024 | $ | 0.83 | $ | 6,170\nDecember 3, 2024 | February 20, 2025 | March 13, 2025 | 0.83 | 6,169\nMarch 11, 2025 | May 15, 2025 | June 12, 2025 | 0.83 | 6,169\nJune 10, 2025 | August 21, 2025 | September 11, 2025 | 0.83 | 6,170\nTotal | $ | 3.32 | $ | 24,678\nFiscal Year 2024\nSeptember 19, 2023 | November 16, 2023 | December 14, 2023 | $ | 0.75 | $ | 5,574\nNovem",
+        "The Company\u2019s common stock is traded on The Nasdaq Stock Market LLC under the symbol AAPL.\nHolders\nAs of October\u00a018, 2024, there were 23,301 shareholders of record.\nPurchases of Equity Securities by the Issuer and Affiliated Purchasers\nShare repurchase activity during the three months ended September\u00a028, 2024 was as follows (in millions, except number of shares, which are reflected in thousands, and per-share amounts):\nPeriods | Total Numberof Shares Purchased | Average PricePaid Per Share | Total Number of SharesPurchased as Part of PubliclyAnnounced Plans or Programs | Approximate Dollar Value ofShares That May Yet Be PurchasedUnder the Plans or Programs(1)\nJune 30, 2024 to August 3, 2024:\nOpen market and privately negotiated purchases | 35,697 | $ | 224.11 | 35,697\nAugust 4, 2024 to August 31, 2024:\nOpen market and privately negotiated purchases | 42,910 | $ | 221.39 | 42,910\nSeptember 1, 2024 to September 28, 2024:\nOpen market and privately negotiated purchases | 33,653 | $ | 222.86 | 33,653\nTotal | 112,260 | $ | 89,074\n\n(1)\nAs of September\u00a028, 2024, the Company was authorized by the Board to purchase up to $110 billion of the Company\u2019s common stock under a share repurchase program announced on May 2, 2024, of which $20.9 billion had been utilized. During the fourth quarter of 2024, the Company also utilized the final $4.1 billion under its previous repurchase program, which was authorized in May 2023. The programs do not obligate the Company to acquire a minimum amount of shares. Under the programs, shares may be repurchased in privately negotiated or open market transactions, including under plans complying with Rule 10b5-1 under the Exchange Act.\nApple Inc. | 2024 Form 10-K | 19\nCompany Stock Performance\nThe following graph shows a comparison of five-year cumulative total shareholder return, calculated on a dividend-reinvested basis, for the Company, the S&P 500 Index and the Dow Jones U.S. Technology Supersector Index. The graph assumes $100 was invested in",
+        "The Company\u2019s common stock is traded on The Nasdaq Stock Market LLC under the symbol AAPL.\nHolders\nAs of October\u00a017, 2025, there were 22,429 shareholders of record.\nPurchases of Equity Securities by the Issuer and Affiliated Purchasers\nShare repurchase activity during the three months ended September\u00a027, 2025, was as follows (in millions, except number of shares, which are reflected in thousands, and per-share amounts):\nPeriods | Total Numberof Shares Purchased | Average PricePaid Per Share | Total Number of SharesPurchased as Part of PubliclyAnnounced Plans or Programs | Approximate Dollar Value ofShares That May Yet Be PurchasedUnder the Plans or Programs(1)\nJune 29, 2025 to August 2, 2025:\nOpen market and privately negotiated purchases | 33,265 | $ | 210.43 | 33,265\nAugust 3, 2025 to August 30, 2025:\nOpen market and privately negotiated purchases | 28,986 | $ | 224.25 | 28,986\nAugust 31, 2025 to September 27, 2025:\nOpen market and privately negotiated purchases | 27,247 | $ | 238.56 | 27,247\nTotal | 89,498 | $ | 99,779\n\n(1)\nOn May 2, 2024, the Company announced a program to repurchase up to $110 billion of the Company\u2019s common stock. During the fourth quarter of 2025, the Company utilized the final $19.8 billion under the May 2024 program. On May 1, 2025, the Company announced an additional program to repurchase up to $100 billion of the Company\u2019s common stock. As of September\u00a027, 2025, $221 million of the May 2025 program had been utilized. The programs do not obligate the Company to acquire a minimum amount of shares. Under the programs, shares may be repurchased in privately negotiated or open market transactions, including under plans complying with Rule 10b5-1 under the Exchange Act.\nApple Inc. | 2025 Form 10-K | 19\nCompany Stock Performance\nThe following graph shows a comparison of five-year cumulative total shareholder return, calculated on a dividend-reinvested basis, for the Company, the S&P 500 Index and the Dow Jones U.S. Technology Total Stock Market"
+      ],
+      "context_metadata": [
+        {
+          "accession_number": "0000320193-24-000123",
+          "char_count": 2000,
+          "chunk_index": 23,
+          "filing_date": "2024-11-01",
+          "section_name": "financial statements",
+          "strategy": "fixed_size",
+          "ticker": "AAPL",
+          "token_estimate": 500
+        },
+        {
+          "accession_number": "0000320193-25-000079",
+          "char_count": 2000,
+          "chunk_index": 23,
+          "filing_date": "2025-10-31",
+          "section_name": "financial statements",
+          "strategy": "fixed_size",
+          "ticker": "AAPL",
+          "token_estimate": 500
+        },
+        {
+          "accession_number": "0000950170-25-100235",
+          "char_count": 2000,
+          "chunk_index": 72,
+          "filing_date": "2025-07-30",
+          "section_name": "management",
+          "strategy": "fixed_size",
+          "ticker": "MSFT",
+          "token_estimate": 500
+        },
+        {
+          "accession_number": "0000320193-24-000123",
+          "char_count": 2000,
+          "chunk_index": 0,
+          "filing_date": "2024-11-01",
+          "section_name": "market for registrant",
+          "strategy": "fixed_size",
+          "ticker": "AAPL",
+          "token_estimate": 500
+        },
+        {
+          "accession_number": "0000320193-25-000079",
+          "char_count": 2000,
+          "chunk_index": 0,
+          "filing_date": "2025-10-31",
+          "section_name": "market for registrant",
+          "strategy": "fixed_size",
+          "ticker": "AAPL",
+          "token_estimate": 500
+        }
+      ],
+      "ground_truth": "Apple repurchased approximately $90 billion of its common stock during fiscal year 2024."
+    },
+    {
+      "question": "What are the key risk factors JPMorgan Chase faces?",
+      "answer": "The key risk factors JPMorgan Chase faces include:\n\n1. Legal and Regulatory risks\n2. Political risks\n3. Market risks\n4. Operational risks\n5. Strategic risks\n6. Conduct risks\n7. Reputation risks\n8. Country risks\n9. People risks\n10. Credit risks\n11. Liquidity risks\n12. Capital risks",
+      "model": "gpt-4o-mini",
+      "prompt_version": "v1",
+      "num_chunks": 5,
+      "prompt_tokens": 1914,
+      "completion_tokens": 72,
+      "total_tokens": 1986,
+      "cost_usd": 0.00033,
+      "contexts": [
+        "The following discussion sets forth the material risk factors that could affect JPMorganChase\u2019s financial condition and operations. Readers should not consider any descriptions of these factors to be a complete set of all potential risks that could affect the Firm. Any of the risk factors discussed below could by itself, or combined with other factors, materially and adversely affect JPMorganChase\u2019s business, results of operations, financial condition, capital position, liquidity, competitive position or reputation, including by materially increasing expenses or decreasing revenues, which could result in material losses or a decrease in earnings.\nSummary\nThe principal risk factors include:\n\u2022\nLegal and Regulatory\nrisks, including the impact of extensive supervision and regulation, as well as changes to or in the application, interpretation or enforcement of applicable law or executive branch actions, on JPMorganChase\u2019s business and operations; the ways in which differences in regulatory implementation in different jurisdictions or with respect to certain competitors could negatively impact JPMorganChase\u2019s business; the ways in which governmental policies that discourage or penalize business relationships with certain industries, or require specific business practices, could negatively affect JPMorganChase's businesses; the penalties and other repercussions that JPMorganChase could face when resolving litigation or investigations by governmental authorities; the ways in which less predictable legal and regulatory frameworks in certain jurisdictions could negatively impact JPMorganChase\u2019s operations and financial results; and the losses that security holders and other unsecured creditors will absorb if JPMorganChase were to enter into a resolution.\n\u2022\nPolitical\nrisks, including the potential negative effects on JPMorganChase\u2019s businesses due to economic uncertainty resulting from political developments.\n\u2022\nMarket\n risks, including the effects that unfavorable economic an",
+        "ress operational risks associated with the introduction of or changes to products, services and delivery platforms or technologies, as well as risks related to data management processes; risks related to safeguarding personal information; potential adverse effects of failing to comply with applicable standards for the oversight of vendors and other service providers; and risks associated with JPMorganChase\u2019s risk management framework and control environment, its models and estimations and associated judgments used in its stress testing and financial statements, and controls over disclosure and financial reporting.\n\u2022\nStrategic\n risks, including the damage to JPMorganChase\u2019s competitive standing that could result from ineffective business strategies; risks associated with the significant competition that JPMorganChase faces; and the potential adverse impacts of climate change on JPMorganChase\u2019s business and operations and those of its clients and customers.\n\u2022\nConduct\n risks, including the negative impact that could result from misconduct of JPMorganChase\u2019s employees.\n\u2022\nReputation\n risks, including the potential negative commercial impacts that can arise from JPMorganChase\u2019s decisions related to clients and business activities; and the failure to effectively manage conflicts of interest or to satisfy fiduciary obligations, or other factors that could damage JPMorganChase\u2019s reputation.\n\u2022\nCountry\n risks, including potential impacts on JPMorganChase\u2019s businesses from an outbreak or escalation of hostilities between countries or within a country or region; and the potential adverse effects\n9\n\nPart I\nof local economic, political, regulatory and social factors on JPMorganChase\u2019s business in certain countries in which it operates.\n\u2022\nPeople\n risks, including the criticality of attracting and retaining qualified employees.\nThe above summary is subject in its entirety to the discussion of the risk factors set forth below.\nThe following terms which are used in the risk factors se",
+        "nd large counterparty losses\n\u2022\ndisruption of trade routes and supply chains globally\n\u2022\nevents or conditions that cause previously uncorrelated market factors to become correlated (and vice versa)\n\u2022\nthe inability to effectively hedge risks related to market-making and investment portfolio positions, or\n\u2022\nother market risks that may not have been adequately considered when developing, structuring or pricing a financial instrument.\nAny significant losses in JPMorganChase\u2019s investment portfolio or from market-making activities could reduce its profitability and its liquidity and capital levels, and thereby constrain the growth of its businesses.\nJPMorganChase\u2019s consumer businesses could be negatively affected by adverse economic conditions and adverse impacts of governmental policies.\nJPMorganChase\u2019s consumer businesses are particularly affected by U.S. and global economic conditions, including:\n\u2022\nthe distribution of personal and household income\n\u2022\nunemployment or underemployment\n\u2022\nchanges in housing prices\n\u2022\nthe level of inflation and its effect on prices for goods and services\n\u2022\nconsumer and small business confidence levels\n\u2022\nprolonged periods of exceptionally high or low interest rates, or significant changes to interest rates\n\u2022\nchanges in the value of collateral such as residential real estate and vehicles, and\n\u2022\nchanges in consumer spending or in the level of consumer debt.\nHigh unemployment levels could reduce personal and household income, which could degrade consumer credit performance if consumers struggle to service their debts. Adverse economic conditions could also lead to an increase in delinquencies, an increase in the allowance for credit losses or higher net charge-offs,\nwhich could reduce JPMorganChase\u2019s earnings. These consequences could be significantly worse if high levels of consumer debt, such as outstanding student loans, impair the ability of customers to pay their other consumer loan obligations, or in certain geographies where declining industr",
+        "her penalties. Furthermore, concerns regarding the effectiveness of JPMorganChase\u2019s measures to safeguard personal information, or the perception that those measures are inadequate, could cause JPMorganChase to lose clients, customers or employees, and thereby reduce JPMorganChase\u2019s revenues. Any of these factors could cause reputational harm and otherwise adversely affect JPMorganChase\u2019s businesses.\nThe growing sophistication of technology poses a heightened risk of identity fraud, as malicious actors may exploit technology to create convincing false identities or manipulate verification processes. Failure to manage these risks or to implement effective countermeasures could lead to unauthorized transactions, financial losses, increased regulatory scrutiny and reputational harm. In addition, greater government scrutiny of practices related to the handling of personal information has in some cases resulted in, and could in the future lead to, the adoption of applicable law in the U.S. and elsewhere that is stricter and could result in JPMorganChase incurring higher compliance costs or constraining its ability to offer certain products and services to customers.\nJPMorganChase\u2019s operations, results and reputation could be harmed by occurrences of extraordinary events beyond its control.\nJPMorganChase\u2019s business and operations could be seriously disrupted, and its reputation could be harmed, by events or contributing factors that are wholly or partially beyond its control, including material instances of:\n\u2022\ncyber attacks\n\u2022\nsecurity breaches of its physical premises, including threats to health and safety\n\u2022\nutility or telecommunications failures, internet outages or shutdowns of mass transit\n\u2022\nfailure of, or loss of access to, technology or operational systems, including any resulting loss of critical data\n\u2022\ninterruption of service from third-party service providers, including financial market infrastructures\n\u2022\ndamage to or loss of property or assets of JPMorganChase or",
+        "ding the potential negative effects on JPMorganChase\u2019s businesses due to economic uncertainty resulting from political developments.\n\u2022\nMarket\n risks, including the effects that unfavorable economic and market events and conditions, political developments, changes in interest rates and credit spreads, and market fluctuations could have on JPMorganChase\u2019s businesses, investments and market-making positions, as well as on its earnings and liquidity and capital levels.\n\u2022\nCredit\nrisks, including the effects from adverse changes in the financial condition of clients, customers, counterparties, central counterparties and other market participants; the potential for losses due to declines in the value of collateral; and potential negative impacts from concentrations of\ncredit risk with respect to clients, customers, counterparties and other market participants.\n\u2022\nLiquidity\n risks, including the risk that JPMorganChase\u2019s ability to operate could be impaired by constrained liquidity; the dependence of JPMorgan Chase & Co. on its subsidiaries for funding; and the potential adverse effects that any downgrades of JPMorganChase\u2019s credit ratings could have on its liquidity and cost of funding.\n\u2022\nCapital\n risks, including the risk that JPMorganChase\u2019s ability to distribute capital to shareholders or to support its business activities could be limited if it does not satisfy applicable regulatory capital requirements.\n\u2022\nOperational\n risks, including risks associated with JPMorganChase\u2019s dependence on its operational systems and its employees, as well as the systems and employees of acquired businesses and external parties; the harm that could be caused by a successful cyber attack affecting JPMorganChase or by other extraordinary events; the adverse effects of failing to identify and address operational risks associated with the introduction of or changes to products, services and delivery platforms or technologies, as well as risks related to data management processes; risks related"
+      ],
+      "context_metadata": [
+        {
+          "accession_number": "0001628280-26-008131",
+          "char_count": 2000,
+          "chunk_index": 0,
+          "filing_date": "2026-02-13",
+          "section_name": "risk factors",
+          "strategy": "fixed_size",
+          "ticker": "JPM",
+          "token_estimate": 500
+        },
+        {
+          "accession_number": "0001628280-26-008131",
+          "char_count": 2000,
+          "chunk_index": 2,
+          "filing_date": "2026-02-13",
+          "section_name": "risk factors",
+          "strategy": "fixed_size",
+          "ticker": "JPM",
+          "token_estimate": 500
+        },
+        {
+          "accession_number": "0001628280-26-008131",
+          "char_count": 2000,
+          "chunk_index": 17,
+          "filing_date": "2026-02-13",
+          "section_name": "risk factors",
+          "strategy": "fixed_size",
+          "ticker": "JPM",
+          "token_estimate": 500
+        },
+        {
+          "accession_number": "0001628280-26-008131",
+          "char_count": 2000,
+          "chunk_index": 43,
+          "filing_date": "2026-02-13",
+          "section_name": "risk factors",
+          "strategy": "fixed_size",
+          "ticker": "JPM",
+          "token_estimate": 500
+        },
+        {
+          "accession_number": "0001628280-26-008131",
+          "char_count": 2000,
+          "chunk_index": 1,
+          "filing_date": "2026-02-13",
+          "section_name": "risk factors",
+          "strategy": "fixed_size",
+          "ticker": "JPM",
+          "token_estimate": 500
+        }
+      ],
+      "ground_truth": "JPMorgan Chase cited risks including credit risk, market risk, operational risk, liquidity risk, and regulatory/compliance risk."
+    },
+    {
+      "question": "What is Apple's strategy for product development?",
+      "answer": "Apple's strategy for product development focuses on the timely introduction of innovative new products, services, and technologies. The Company designs and develops nearly the entire solution for its products, including hardware, operating systems, and software applications. It emphasizes competitive factors such as product quality, design, technology innovation, and a strong ecosystem of third-party software and accessories. Additionally, Apple invests in research and development to create compelling products and services, ensuring they maintain competitive advantages through product differentiation and technical control.",
+      "model": "gpt-4o-mini",
+      "prompt_version": "v1",
+      "num_chunks": 5,
+      "prompt_tokens": 1856,
+      "completion_tokens": 96,
+      "total_tokens": 1952,
+      "cost_usd": 0.000336,
+      "contexts": [
+        "an older product often declines as the launch of a newer product approaches. Net sales can also be affected when consumers and distributors anticipate a product introduction.\nHuman Capital\nThe Company believes that its people play an important role in its success, and strives to attract, develop and retain the best talent. The Company works to create a culture of collaboration, one where people with a broad range of backgrounds and perspectives can come together to innovate and do the best work of their lives. The Company is an equal opportunity employer committed to inclusion and to providing a workplace free of harassment or discrimination. As of September\u00a027, 2025, the Company had approximately 166,000 full-time equivalent employees.\nThe Company believes that compensation should be competitive and equitable, and offers discretionary cash and equity awards to enable employees to share in the Company\u2019s success. The Company recognizes its people are most likely to thrive when they have the resources to meet their needs and the time and support to succeed in their professional and personal lives. In support of this, the Company offers a wide variety of benefits for employees around the world, including health, wellness and time away.\nThe Company invests in resources to help its people develop and achieve their career goals. The Company offers programs through Apple University on leadership, management and influence, as well as Apple culture and values. Team members can also take advantage of online classes for business, technical and personal development.\nThe Company believes that open and honest communication among team members, managers and leaders helps create an open, collaborative work environment where everyone can contribute, grow and succeed. Team members are encouraged to come to their managers with questions, feedback or concerns, and the Company conducts surveys that gauge employee sentiment in areas like career development, manager performance and inclusi",
+        "ly been able to obtain such licenses on commercially reasonable terms in the past, there is no guarantee that such licenses could be obtained in the future on reasonable terms or at all.\nApple Inc. | 2024 Form 10-K | 3\nBusiness Seasonality and Product Introductions\nThe Company has historically experienced higher net sales in its first quarter compared to other quarters in its fiscal year due in part to seasonal holiday demand. Additionally, new product and service introductions can significantly impact net sales, cost of sales and operating expenses. The timing of product introductions can also impact the Company\u2019s net sales to its indirect distribution channels as these channels are filled with new inventory following a product launch, and channel inventory of an older product often declines as the launch of a newer product approaches. Net sales can also be affected when consumers and distributors anticipate a product introduction.\nHuman Capital\nThe Company believes that its people play an important role in its success, and strives to attract, develop and retain the best talent. The Company works to create an inclusive, safe and supportive environment for all of its team members, so that its people can do the best work of their lives. As of September\u00a028, 2024, the Company had approximately 164,000 full-time equivalent employees.\nCompensation and Benefits\nThe Company believes that compensation should be competitive and equitable, and should enable employees to share in the Company\u2019s success. The Company recognizes its people are most likely to thrive when they have the resources to meet their needs and the time and support to succeed in their professional and personal lives. In support of this, the Company offers a wide variety of benefits for employees around the world, including health, wellness and time away.\nGrowth and Development\nThe Company invests in resources to help its people develop and achieve their career goals. The Company offers programs through Apple",
+        "pple Inc. | 2025 Form 10-K | 2\nThe Company\u2019s ability to compete successfully depends heavily on ensuring the continuing and timely introduction of innovative new products, services and technologies to the marketplace. The Company designs and develops nearly the entire solution for its products, including the hardware, operating system, numerous software applications and related services. Principal competitive factors important to the Company include price, product and service features (including security features), relative price and performance, product and service quality and reliability, design and technology innovation, a strong third-party software and accessories ecosystem, marketing and distribution capability, service and support, corporate reputation, and the ability to effectively protect and enforce the Company\u2019s intellectual property rights.\nThe Company is focused on expanding its market opportunities related to smartphones, personal computers, tablets, wearables and accessories, and services. The Company\u2019s products and services face substantial competition from companies that have significant technical, marketing, distribution and other resources, as well as established hardware, software, and service offerings with large customer bases. In addition, the Company faces significant competition as competitors imitate the Company\u2019s product features and applications within their products to offer more competitive solutions. The Company also expects competition to intensify as competitors imitate the Company\u2019s approach to providing components seamlessly within their offerings or work collaboratively to offer integrated solutions. Some of the Company\u2019s competitors have broad product lines, low-priced products, large installed bases of active devices, and large customer bases. Competition has been particularly intense as competitors have aggressively cut prices and lowered product margins. Certain competitors have the resources, experience or cost structures to",
+        "d measures to enhance supply chain efficiency and resilience, including the ability to relocate production geographically.\n\nThere are few qualified suppliers for certain components of our servers and devices. Extended or unforeseen disruptions at these suppliers could impact our ability to operate our datacenters and manufacture devices on time to meet consumer demand.\nRESEARCH AND DEVELOPMENT\n\nProduct and Service Development\n\nOur success is based on our ability to create new and compelling products, services, and experiences for our users, initiate and embrace disruptive technology trends, enter new geographic and product markets, and drive broad adoption of our products and services. We make significant investments in research and development for new and existing products, services, and technologies, including tools and platforms spanning digital work and life experiences, cloud computing, AI, devices, security, and operating systems.\n\nWe develop most of our products and services internally which allows us to maintain competitive advantages that come from product differentiation and closer technical control over our products and services. It also gives us the freedom to decide which modifications and enhancements are most important and when they should be implemented. We strive to obtain information as early as possible about changing usage patterns and hardware advances that may affect software and hardware design. Before releasing new software platforms, and as we make significant modifications to existing platforms, we provide application vendors with a range of resources and guidelines for development, training, and testing.\nWe plan to continue to make significant investments in a broad range of product research and development activities, and as appropriate, we will coordinate our research and development across operating segments and leverage the results across the company. This includes continuing to support fundamental research, which provides us with a un",
+        "bilities of its personnel.\nThe Company regularly files patent, design, copyright and trademark applications to protect innovations arising from its hardware, software and service research, development, design and marketing, and is currently pursuing thousands of applications around the world. Over time, the Company has accumulated a large portfolio of issued and registered intellectual property rights around the world. No single intellectual property right is solely responsible for protecting the Company\u2019s products and services. The Company believes the duration of its intellectual property rights is adequate relative to the expected lives of its products and services.\nApple Inc. | 2025 Form 10-K | 3\nIn addition to Company-owned intellectual property, many of the Company\u2019s products and services include technology or intellectual property that must be licensed from third parties. It may be necessary in the future to seek or renew licenses relating to various aspects of the Company\u2019s products, processes and services. While the Company has generally been able to obtain such licenses on commercially reasonable terms in the past, there is no guarantee that such licenses could be obtained in the future on reasonable terms or at all.\nBusiness Seasonality and Product Introductions\nThe Company has historically experienced higher net sales in its first quarter compared to other quarters in its fiscal year due in part to seasonal holiday demand. Additionally, new product and service introductions can significantly impact net sales, cost of sales and operating expenses. The timing of product introductions can also impact the Company\u2019s net sales to its indirect distribution channels as these channels are filled with new inventory following a product launch, and channel inventory of an older product often declines as the launch of a newer product approaches. Net sales can also be affected when consumers and distributors anticipate a product introduction.\nHuman Capital\nThe Company"
+      ],
+      "context_metadata": [
+        {
+          "accession_number": "0000320193-25-000079",
+          "char_count": 2000,
+          "chunk_index": 7,
+          "filing_date": "2025-10-31",
+          "section_name": "business",
+          "strategy": "fixed_size",
+          "ticker": "AAPL",
+          "token_estimate": 500
+        },
+        {
+          "accession_number": "0000320193-24-000123",
+          "char_count": 2000,
+          "chunk_index": 6,
+          "filing_date": "2024-11-01",
+          "section_name": "business",
+          "strategy": "fixed_size",
+          "ticker": "AAPL",
+          "token_estimate": 500
+        },
+        {
+          "accession_number": "0000320193-25-000079",
+          "char_count": 2000,
+          "chunk_index": 3,
+          "filing_date": "2025-10-31",
+          "section_name": "business",
+          "strategy": "fixed_size",
+          "ticker": "AAPL",
+          "token_estimate": 500
+        },
+        {
+          "accession_number": "0000950170-25-100235",
+          "char_count": 2000,
+          "chunk_index": 17,
+          "filing_date": "2025-07-30",
+          "section_name": "principal accountant",
+          "strategy": "fixed_size",
+          "ticker": "MSFT",
+          "token_estimate": 500
+        },
+        {
+          "accession_number": "0000320193-25-000079",
+          "char_count": 2000,
+          "chunk_index": 6,
+          "filing_date": "2025-10-31",
+          "section_name": "business",
+          "strategy": "fixed_size",
+          "ticker": "AAPL",
+          "token_estimate": 500
+        }
+      ],
+      "ground_truth": "Apple focuses on designing innovative hardware, software, and services that integrate seamlessly, targeting premium market segments with a vertically integrated ecosystem."
+    }
+  ]
+}

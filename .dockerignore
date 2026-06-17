@@ -1,0 +1,16 @@
+venv/
+data/raw/
+data/chunks/
+data/processed/
+wandb/
+mlruns/
+mlflow.db
+__pycache__/
+**/__pycache__/
+*.pyc
+*.pyo
+.env
+.git/
+tests/
+*.log
+.pytest_cache/

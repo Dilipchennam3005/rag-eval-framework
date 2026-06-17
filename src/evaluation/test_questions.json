@@ -1,0 +1,42 @@
+[
+  {
+    "question": "What was Apple's total revenue in fiscal year 2024?",
+    "ground_truth": "Apple reported net sales of $391.035 billion in fiscal year 2024.",
+    "ticker": "AAPL"
+  },
+  {
+    "question": "What are the main risk factors Apple cited in its 2024 10-K?",
+    "ground_truth": "Apple cited risks including global economic conditions, reliance on third-party manufacturers, intense competition, and dependence on key personnel.",
+    "ticker": "AAPL"
+  },
+  {
+    "question": "How much did Microsoft spend on research and development in fiscal year 2024?",
+    "ground_truth": "Microsoft reported research and development expenses of approximately $29.5 billion in fiscal year 2024.",
+    "ticker": "MSFT"
+  },
+  {
+    "question": "What is JPMorgan Chase's primary business segments?",
+    "ground_truth": "JPMorgan Chase operates through four segments: Consumer & Community Banking, Commercial Banking, Corporate & Investment Bank, and Asset & Wealth Management.",
+    "ticker": "JPM"
+  },
+  {
+    "question": "What was Microsoft's cloud revenue in 2024?",
+    "ground_truth": "Microsoft's Intelligent Cloud segment revenue was approximately $87.9 billion in fiscal year 2024.",
+    "ticker": "MSFT"
+  },
+  {
+    "question": "How many shares did Apple repurchase in fiscal year 2024?",
+    "ground_truth": "Apple repurchased approximately $90 billion of its common stock during fiscal year 2024.",
+    "ticker": "AAPL"
+  },
+  {
+    "question": "What are the key risk factors JPMorgan Chase faces?",
+    "ground_truth": "JPMorgan Chase cited risks including credit risk, market risk, operational risk, liquidity risk, and regulatory/compliance risk.",
+    "ticker": "JPM"
+  },
+  {
+    "question": "What is Apple's strategy for product development?",
+    "ground_truth": "Apple focuses on designing innovative hardware, software, and services that integrate seamlessly, targeting premium market segments with a vertically integrated ecosystem.",
+    "ticker": "AAPL"
+  }
+]

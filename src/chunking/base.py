@@ -1,3 +1,4 @@
+import hashlib
 from abc import ABC, abstractmethod
 from dataclasses import dataclass
 
@@ -18,28 +19,19 @@ class Chunk:
 
 
 class BaseChunker(ABC):
-    """
-    Abstract base class for all chunking strategies.
-    Every chunker must implement the chunk() method.
-    This is the interface that makes strategies swappable.
-    """
 
     def __init__(self, strategy_name: str):
         self.strategy_name = strategy_name
 
     @abstractmethod
     def chunk(self, sections: list[dict]) -> list[Chunk]:
-        """
-        Takes a list of parsed sections and returns a list of Chunks.
-        """
         pass
 
     def estimate_tokens(self, text: str) -> int:
-        """
-        Rough token estimate: 1 token ≈ 4 characters for English text.
-        """
         return len(text) // 4
 
-    def make_chunk_id(self, accession: str, section: str, index: int) -> str:
-        section_clean = section.replace(" ", "_")[:20]
-        return f"{accession}_{section_clean}_{index:04d}"
+    def make_chunk_id(self, accession: str, section: str, index: int, text: str = "") -> str:
+        section_clean = section.replace(" ", "_")[:15]
+        # Use full 12-char hash to make collisions virtually impossible
+        text_hash = hashlib.md5(f"{accession}{section}{index}{text}".encode()).hexdigest()[:12]
+        return f"{self.strategy_name[:5]}_{accession}_{section_clean}_{index:04d}_{text_hash}"

@@ -1,0 +1,15 @@
+streamlit==1.58.0
+openai==1.109.1
+pinecone==9.1.0
+rank-bm25==0.2.2
+loguru==0.7.3
+python-dotenv==1.2.2
+pyyaml==6.0.3
+pandas==2.3.3
+sqlalchemy==2.0.51
+langsmith==0.1.147
+openinference-instrumentation-openai==0.1.52
+arize-phoenix-otel==0.16.1
+beautifulsoup4==4.15.0
+lxml==6.1.1
+requests==2.34.2
