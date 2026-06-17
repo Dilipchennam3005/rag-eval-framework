@@ -1,78 +1,160 @@
 # RAG Evaluation & Observability Framework
 
-A production-style RAG evaluation system over SEC 10-K filings — implementing
-two chunking strategies, hybrid retrieval, RAGAS-based scoring, and full
-experiment tracking via MLflow, Weights & Biases, and Arize Phoenix.
+> **Live demo:** [https://rag-eval-framework-clc6ju46dq-uc.a.run.app](https://rag-eval-framework-clc6ju46dq-uc.a.run.app)
+
+A production-grade Retrieval-Augmented Generation system built on SEC 10-K filings (AAPL, MSFT, JPM). The project covers every layer of the RAG stack — ingestion through evaluation — with full observability and a 4-way ablation study backed by real RAGAS scores.
+
+---
+
+## Architecture
+
+```mermaid
+flowchart TD
+    A[SEC EDGAR API] -->|HTM filings| B[Document Parser\nBeautifulSoup + table renderer]
+    B -->|structured sections| C{Chunking Strategy}
+    C -->|2000 chars / 200 overlap| D[FixedSizeChunker\n1309 chunks]
+    C -->|paragraph-aware / 3000 max| E[DocumentAwareChunker\n996 chunks]
+    D & E -->|text-embedding-3-small| F[OpenAI Embedder\nbatch + retry]
+    F -->|1536-dim vectors| G[(Pinecone\nServerless Index\naws us-east-1)]
+    D & E -->|BM25Okapi| H[(BM25 Index\nlocal pkl)]
+    G & H -->|Reciprocal Rank Fusion\nw=0.7/0.3 k=60| I[HybridRetriever]
+    I -->|top-15 candidates| J[CrossEncoderReranker\nms-marco-MiniLM-L-6-v2]
+    J -->|top-5 reranked| K[Generator\ngpt-4o-mini]
+    K --> L[Answer + cost metadata]
+    L -->|RAGAS metrics| M[RAGASEvaluator\nfaithfulness · relevancy\nprecision · recall]
+    L -->|params + metrics| N[MLflow\nSQLite backend]
+    L -->|tables + charts| O[Weights & Biases]
+    K -->|OpenAI spans| P[LangSmith Tracing]
+    K -->|OTEL spans| Q[Arize Phoenix]
+    R[Streamlit Dashboard] -->|query UI + ablation charts| S[GCP Cloud Run\n2Gi · auto-scale 0 to 3]
+    S -->|CI/CD| T[GitHub Actions\nWorkload Identity Federation]
+```
+
+---
+
+## Results — 4-Way Ablation Study
+
+8 questions across AAPL, MSFT, JPM 10-K filings. Model: `gpt-4o-mini`. Retriever: Hybrid (BM25 + Pinecone RRF).
+
+| Run | Faithfulness | Answer Relevancy | Context Precision | Context Recall | Avg Cost/Query |
+|-----|:-----------:|:----------------:|:-----------------:|:--------------:|:--------------:|
+| fixed\_size · prompt v1 | 0.977 | **0.996** | 0.661 | **0.594** | $0.000382 |
+| fixed\_size · prompt v2 | 0.895 | **0.996** | 0.782 | **0.594** | $0.000419 |
+| document\_aware · prompt v1 | **1.000** | 0.991 | 0.796 | 0.531 | $0.000501 |
+| document\_aware · prompt v2 | 0.854 | 0.992 | **0.877** | 0.531 | $0.000519 |
+
+**Key findings:**
+- `document_aware + v1` achieves perfect faithfulness (1.000) — paragraph-aware chunks prevent mid-sentence splits that cause hallucination
+- `document_aware + v2` wins context precision (0.877) — the citation instruction in v2 forces the model to draw only from the most relevant chunks
+- `fixed_size` wins context recall (0.594) — smaller, denser chunks cast a wider net across the document
+- Average cost per query is **$0.0004–$0.0005** — the full 8-question eval suite costs less than half a cent
+
+---
 
 ## Stack
-Python 3.11 · RAGAS · MLflow · Weights & Biases · ChromaDB · OpenAI API · Streamlit
+
+| Layer | Technology |
+|-------|-----------|
+| Ingestion | SEC EDGAR API, BeautifulSoup, custom HTML table renderer |
+| Chunking | FixedSizeChunker (2000/200), DocumentAwareChunker (3000 max) |
+| Embedding | OpenAI `text-embedding-3-small`, batch + exponential retry |
+| Vector store | Pinecone v9 serverless (AWS us-east-1, 1536-dim) |
+| Sparse retrieval | BM25Okapi via `rank-bm25` |
+| Hybrid fusion | Reciprocal Rank Fusion (vector 0.7 · BM25 0.3 · k=60) |
+| Reranker | `cross-encoder/ms-marco-MiniLM-L-6-v2` via sentence-transformers |
+| Generation | GPT-4o-mini with per-query cost tracking |
+| Evaluation | RAGAS (faithfulness, answer\_relevancy, context\_precision, context\_recall) |
+| Tracing | LangSmith (`wrap_openai`) |
+| Experiment tracking | MLflow (SQLite) + Weights & Biases |
+| Span observability | Arize Phoenix (OpenTelemetry) |
+| Dashboard | Streamlit |
+| Deployment | GCP Cloud Run (2Gi, 0-3 instances) |
+| CI/CD | GitHub Actions + Workload Identity Federation (no service account keys) |
+
+---
 
 ## Project Structure
+
 ```
 rag-eval-framework/
 ├── src/
-│   ├── ingestion/          # SEC EDGAR downloader, HTML parser, SQLite registry
-│   ├── chunking/           # Fixed-size vs document-aware chunking strategies
-│   ├── embedding/          # OpenAI embedder, ChromaDB vector store, BM25 index
-│   ├── retrieval/          # Vector-only and hybrid (RRF) retrievers
-│   ├── generation/         # GPT-4o-mini generator with prompt versioning
-│   ├── evaluation/         # RAGAS evaluation pipeline + test questions
-│   ├── observability/      # MLflow + W&B experiment tracking
-│   └── dashboard/          # Streamlit UI
-├── data/
-│   ├── raw/                # Downloaded SEC filings (gitignored)
-│   ├── chromadb/           # Vector store (gitignored)
-│   └── registry.db         # SQLite document registry (gitignored)
+│   ├── ingestion/          # SEC EDGAR downloader, HTML parser, document registry
+│   ├── chunking/           # FixedSizeChunker, DocumentAwareChunker
+│   ├── embedding/          # OpenAI embedder, Pinecone VectorStore, BM25Index
+│   ├── retrieval/          # VectorRetriever, HybridRetriever, CrossEncoderReranker
+│   ├── generation/         # Generator (gpt-4o-mini), PromptManager (versioned)
+│   ├── evaluation/         # RAGASEvaluator, test_questions.json
+│   ├── observability/      # MLflowTracker, WandbTracker, PhoenixTracer
+│   └── dashboard/          # Streamlit app
 ├── configs/config.yaml
-├── prompts/
-│   ├── v1_basic.txt
-│   └── v2_with_citations.txt
-└── main.py
+├── prompts/                # v1 (concise), v2 (cite sources)
+├── experiments/            # RAGAS results JSON per run
+├── main.py                 # Experiment runner (--strategy, --prompt, --rerank)
+├── Dockerfile
+└── .github/workflows/deploy.yml
 ```
 
-## Setup
+---
+
+## Running Locally
+
 ```bash
-py -3.11 -m venv venv
-venv\Scripts\activate
-pip install torch --index-url https://download.pytorch.org/whl/cpu
+git clone https://github.com/Dilipchennam3005/rag-eval-framework.git
+cd rag-eval-framework
+python -m venv venv && venv\Scripts\activate   # Windows
 pip install -r requirements.txt
 ```
 
-Copy `.env.example` to `.env` and fill in your API keys:
+Create `.env`:
 ```
-OPENAI_API_KEY=sk-proj-...
+OPENAI_API_KEY=...
+PINECONE_API_KEY=...
+LANGCHAIN_API_KEY=...
 WANDB_API_KEY=...
 ```
 
-## Usage
-
-**Run experiments (both chunking strategies):**
 ```bash
+# Build index + run all 4 ablation experiments
 python main.py
-```
 
-**Run a single strategy:**
-```bash
-python main.py --strategy fixed_size --prompt v2
-```
+# With cross-encoder reranker
+python main.py --rerank
 
-**Launch Streamlit dashboard:**
-```bash
+# Dashboard (local, with hybrid retrieval enabled)
 streamlit run src/dashboard/app.py
 ```
 
-**View MLflow UI:**
-```bash
-mlflow ui
-```
+---
 
-## Progress
-- [x] Layer 1 — Data ingestion (AAPL, MSFT, JPM 10-K filings)
-- [x] Layer 2 — Chunking (fixed-size vs document-aware)
-- [x] Layer 3 — Embedding (OpenAI text-embedding-3-small + ChromaDB + BM25)
-- [x] Layer 4 — Retrieval (vector-only and hybrid RRF)
-- [x] Layer 5 — Generation (GPT-4o-mini + prompt versioning v1/v2)
-- [x] Layer 6 — Evaluation (RAGAS: faithfulness, relevancy, precision, recall)
-- [x] Layer 7 — Observability (MLflow + W&B)
-- [x] Streamlit dashboard (query UI + experiment comparison)
-- [ ] Docker + GCP Cloud Run
+## Design Decisions
+
+**Pinecone over ChromaDB**
+ChromaDB stores the index on disk, which means the Docker image would need to bundle gigabytes of vector data and the container becomes stateful. Pinecone is cloud-hosted — the container stays stateless, scales to zero between requests with no cold-start penalty for the index. Trade-off: ~30ms network latency per query vs. microsecond local lookup.
+
+**Workload Identity Federation over service account keys**
+GCP org policy blocked service account key creation. WIF exchanges short-lived GitHub OIDC tokens for GCP credentials at deploy time — no key files to rotate, no secrets exposed in CI logs.
+
+**Hybrid retrieval (BM25 + dense vectors)**
+Dense-only retrieval misses exact financial term matches: ticker symbols, specific dollar figures, line item names like "EBITDA". BM25 catches keyword hits; Reciprocal Rank Fusion merges both ranked lists without requiring score calibration between the two systems.
+
+**DocumentAware chunking**
+SEC filings are structured by section and paragraph. Splitting mid-paragraph confuses the LLM about context boundaries and is a direct cause of hallucination (faithfulness drops from 1.000 to 0.977 on the same prompt). DocumentAwareChunker merges paragraphs up to 3000 chars, staying within a single semantic unit. Trade-off: fewer, larger chunks reduce recall (0.531 vs 0.594).
+
+**HTML table pre-processing**
+`BeautifulSoup.get_text()` on financial tables produces orphaned numbers (`87,831\n74,114`). A custom `_render_table()` function converts each `<tr>` to a pipe-delimited row before text extraction, preserving `Label | value1 | value2` structure the LLM needs to reason correctly over numbers.
+
+---
+
+## Lessons Learned
+
+**Binary files and Docker build context**
+Git-committed pkl files (10 MB+) were silently excluded from the GitHub Actions build context (525 KB transfer). Ephemeral runners have no Docker layer cache and the files never reached the image. Solution: remove local file dependencies entirely and fall back to cloud-hosted state (Pinecone) at runtime, making the container truly stateless.
+
+**GCP API enablement order**
+Workload Identity Federation requires both `iam.googleapis.com` and `iamcredentials.googleapis.com`. The WIF setup docs only surface the first; `iamcredentials` fails silently until the first actual credential exchange attempt during deployment.
+
+**RAGAS recall vs. precision trade-off**
+Smaller fixed-size chunks improve recall (0.594 vs 0.531) because they match more diverse queries. Larger document-aware chunks improve precision (0.877 vs 0.782) because each chunk is a coherent semantic unit. The right choice depends on whether the use case is exploratory (favor recall) or citation-quality (favor precision).
+
+**Lazy imports for optional heavy dependencies**
+`sentence_transformers` pulls in PyTorch (~2 GB). A top-level import crashes the app on any environment without it. Moving the import inside `__init__()` lets the module load cleanly and surfaces a clear error only when the feature is actually invoked.
