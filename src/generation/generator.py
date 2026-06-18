@@ -68,5 +68,34 @@ class Generator:
         )
         return result
 
+    def stream(self, question: str, chunks: list[dict], usage_out: dict | None = None):
+        """Yield answer tokens one by one. Populates usage_out with cost/token data."""
+        prompt = self.prompt_manager.build(question, chunks)
+
+        response = self.client.chat.completions.create(
+            model=self.model,
+            messages=[{"role": "user", "content": prompt}],
+            temperature=0,
+            stream=True,
+            stream_options={"include_usage": True},
+        )
+
+        for chunk in response:
+            if chunk.choices and chunk.choices[0].delta.content:
+                yield chunk.choices[0].delta.content
+            if chunk.usage and usage_out is not None:
+                u = chunk.usage
+                cost = (
+                    u.prompt_tokens * _INPUT_COST_PER_TOKEN
+                    + u.completion_tokens * _OUTPUT_COST_PER_TOKEN
+                )
+                usage_out.update({
+                    "prompt_tokens": u.prompt_tokens,
+                    "completion_tokens": u.completion_tokens,
+                    "total_tokens": u.total_tokens,
+                    "cost_usd": round(cost, 6),
+                    "model": self.model,
+                })
+
     def switch_prompt(self, version: str) -> None:
         self.prompt_manager.switch_version(version)

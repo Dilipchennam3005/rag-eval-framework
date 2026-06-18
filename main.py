@@ -19,7 +19,7 @@ from src.ingestion.document_registry import DocumentRegistry
 from src.chunking import FixedSizeChunker, DocumentAwareChunker
 from src.embedding.embedder import Embedder
 from src.embedding.vector_store import VectorStore
-from src.embedding.bm25_index import BM25Index
+from src.embedding.sparse_encoder import SparseEncoder
 from src.retrieval import VectorRetriever, HybridRetriever, CrossEncoderReranker
 from src.generation import Generator
 from src.evaluation.evaluator import RAGASEvaluator, load_test_questions
@@ -50,29 +50,30 @@ def build_index(cfg: dict, strategy: str) -> tuple:
         namespace=f"sec_{strategy}",
         dimension=cfg["pinecone"]["dimension"],
     )
-    bm25_path = cfg["data"]["bm25_index_path"].replace(".pkl", f"_{strategy}.pkl")
-    bm25 = BM25Index(bm25_path)
+    sparse_path = cfg["data"]["sparse_encoder_path"].replace(".pkl", f"_{strategy}.pkl")
+    sparse_encoder = SparseEncoder(sparse_path)
 
-    if vector_store.count() == len(chunks) and bm25.load():
+    if vector_store.count() == len(chunks) and sparse_encoder.load():
         logger.info(f"Index already built ({vector_store.count()} vectors) — skipping embedding")
     else:
         texts = [c.text for c in chunks]
         embeddings = embedder.embed_texts(texts)
-        vector_store.add_chunks(chunks, embeddings)
-        bm25.build(chunks)
-        logger.info(f"Index built: {vector_store.count()} vectors, {len(bm25.chunks)} BM25 docs")
+        sparse_encoder.fit(texts)
+        sparse_vectors = sparse_encoder.encode_documents(texts)
+        vector_store.add_chunks(chunks, embeddings, sparse_vectors)
+        logger.info(f"Index built: {vector_store.count()} dense+sparse vectors")
 
-    return embedder, vector_store, bm25
+    return embedder, vector_store, sparse_encoder
 
 
 def run_experiment(strategy: str, prompt_version: str, cfg: dict, use_reranker: bool = False) -> dict:
-    embedder, vector_store, bm25 = build_index(cfg, strategy)
+    embedder, vector_store, sparse_encoder = build_index(cfg, strategy)
 
     retriever = HybridRetriever(
         embedder=embedder,
         vector_store=vector_store,
-        bm25_index=bm25,
-        **cfg["retrieval"]["hybrid"],
+        sparse_encoder=sparse_encoder,
+        sparse_weight=cfg["retrieval"]["hybrid"]["sparse_weight"],
     )
     reranker = CrossEncoderReranker(cfg["retrieval"]["reranker_model"]) if use_reranker else None
 

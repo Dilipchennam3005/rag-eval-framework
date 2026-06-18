@@ -17,7 +17,7 @@ sys.path.insert(0, str(Path(__file__).parent.parent.parent))
 
 from src.embedding.embedder import Embedder
 from src.embedding.vector_store import VectorStore
-from src.embedding.bm25_index import BM25Index
+from src.embedding.sparse_encoder import SparseEncoder
 from src.retrieval import HybridRetriever, VectorRetriever, CrossEncoderReranker
 from src.generation import Generator
 
@@ -33,9 +33,9 @@ def load_config():
     return yaml.safe_load(Path("configs/config.yaml").read_text())
 
 
-def _bm25_path(strategy: str) -> Path:
+def _sparse_encoder_path(strategy: str) -> Path:
     cfg = load_config()
-    return Path(cfg["data"]["bm25_index_path"].replace(".pkl", f"_{strategy}.pkl"))
+    return Path(cfg["data"]["sparse_encoder_path"].replace(".pkl", f"_{strategy}.pkl"))
 
 
 @st.cache_resource
@@ -49,9 +49,12 @@ def load_retriever(strategy: str, retriever_type: str):
     )
 
     if retriever_type == "Hybrid":
-        bm25 = BM25Index(str(_bm25_path(strategy)))
-        if bm25.load():
-            return HybridRetriever(embedder, vector_store, bm25, **cfg["retrieval"]["hybrid"])
+        sparse_encoder = SparseEncoder(str(_sparse_encoder_path(strategy)))
+        if sparse_encoder.load():
+            return HybridRetriever(
+                embedder, vector_store, sparse_encoder,
+                sparse_weight=cfg["retrieval"]["hybrid"]["sparse_weight"],
+            )
 
     return VectorRetriever(embedder, vector_store)
 
@@ -97,9 +100,9 @@ with tab_query:
             help=None if _RERANKER_AVAILABLE else "Not available in cloud deployment (sentence-transformers not installed)",
         )
 
-    if retriever_type == "Hybrid" and not _bm25_path(strategy).exists():
+    if retriever_type == "Hybrid" and not _sparse_encoder_path(strategy).exists():
         st.info(
-            "BM25 index not found — running in vector-only mode. "
+            "Sparse encoder not found — running in vector-only mode. "
             "Run `python main.py` locally to build the index and enable hybrid retrieval."
         )
 
@@ -109,52 +112,54 @@ with tab_query:
     )
 
     if st.button("Ask", type="primary") and question:
-        with st.spinner("Retrieving and generating..."):
-            try:
-                retriever = load_retriever(strategy, retriever_type)
-                generator = load_generator(prompt_version)
+        try:
+            retriever = load_retriever(strategy, retriever_type)
+            generator = load_generator(prompt_version)
 
-                cfg = load_config()
-                top_k = cfg["retrieval"]["top_k"]
-                fetch_k = top_k * 3 if use_reranker else top_k
+            cfg = load_config()
+            top_k = cfg["retrieval"]["top_k"]
+            fetch_k = top_k * 3 if use_reranker else top_k
+
+            with st.spinner("Retrieving relevant sections..."):
                 chunks = retriever.retrieve(question, top_k=fetch_k)
                 if use_reranker:
                     reranker = CrossEncoderReranker(cfg["retrieval"]["reranker_model"])
                     chunks = reranker.rerank(question, chunks, top_k=top_k)
-                result = generator.generate(question, chunks)
 
-                st.subheader("Answer")
-                st.write(result["answer"])
+            st.subheader("Answer")
+            usage: dict = {}
+            st.write_stream(generator.stream(question, chunks, usage_out=usage))
 
-                with st.expander(f"Retrieved chunks ({len(chunks)})"):
-                    for i, chunk in enumerate(chunks, 1):
-                        meta = chunk.get("metadata", {})
-                        st.markdown(
-                            f"**[{i}] {meta.get('ticker', '?')} · "
-                            f"{meta.get('filing_date', '?')} · "
-                            f"{meta.get('section_name', '?')}** "
-                            f"(score: {chunk.get('score', 0):.3f})"
-                        )
-                        st.text(chunk["text"][:500] + "..." if len(chunk["text"]) > 500 else chunk["text"])
+            with st.expander(f"Retrieved chunks ({len(chunks)})"):
+                for i, chunk in enumerate(chunks, 1):
+                    meta = chunk.get("metadata", {})
+                    st.markdown(
+                        f"**[{i}] {meta.get('ticker', '?')} · "
+                        f"{meta.get('filing_date', '?')} · "
+                        f"{meta.get('section_name', '?')}** "
+                        f"(score: {chunk.get('score', 0):.3f})"
+                    )
+                    st.text(chunk["text"][:500] + "..." if len(chunk["text"]) > 500 else chunk["text"])
 
+            if usage:
                 col_a, col_b, col_c = st.columns(3)
-                col_a.metric("Total tokens", f"{result['total_tokens']:,}")
-                col_b.metric("Cost", f"${result['cost_usd']:.5f}")
-                col_c.metric("Model", result["model"])
+                col_a.metric("Total tokens", f"{usage['total_tokens']:,}")
+                col_b.metric("Cost", f"${usage['cost_usd']:.5f}")
+                col_c.metric("Model", usage["model"])
 
                 with st.expander("Token breakdown"):
                     st.json({
-                        "prompt_tokens": result["prompt_tokens"],
-                        "completion_tokens": result["completion_tokens"],
-                        "total_tokens": result["total_tokens"],
-                        "cost_usd": result["cost_usd"],
+                        "prompt_tokens": usage["prompt_tokens"],
+                        "completion_tokens": usage["completion_tokens"],
+                        "total_tokens": usage["total_tokens"],
+                        "cost_usd": usage["cost_usd"],
                     })
 
-            except ImportError as e:
-                st.error(f"Missing dependency: {e}")
-            except Exception as e:
-                st.error(f"Error: {e}")
-                st.info("Make sure the Pinecone index has been built by running `python main.py` first.")
+        except ImportError as e:
+            st.error(f"Missing dependency: {e}")
+        except Exception as e:
+            st.error(f"Error: {e}")
+            st.info("Make sure the Pinecone index has been built by running `python main.py` first.")
 
 # ── Experiment results tab ─────────────────────────────────────────────────
 with tab_compare:

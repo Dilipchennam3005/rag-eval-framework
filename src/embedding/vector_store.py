@@ -31,7 +31,7 @@ class VectorStore:
             self.pc.create_index(
                 name=index_name,
                 dimension=dimension,
-                metric="cosine",
+                metric="dotproduct",
                 spec=ServerlessSpec(cloud="aws", region="us-east-1"),
             )
             # Wait until ready
@@ -45,12 +45,18 @@ class VectorStore:
             f"vectors={self.count()}"
         )
 
-    def add_chunks(self, chunks: list, embeddings: list[list[float]]) -> int:
+    def add_chunks(
+        self,
+        chunks: list,
+        embeddings: list[list[float]],
+        sparse_vectors: list[dict] | None = None,
+    ) -> int:
         if not chunks:
             return 0
 
-        vectors = [
-            {
+        vectors = []
+        for i, (c, emb) in enumerate(zip(chunks, embeddings)):
+            vec: dict = {
                 "id": c.chunk_id,
                 "values": emb,
                 "metadata": {
@@ -65,8 +71,9 @@ class VectorStore:
                     "text": c.text,
                 },
             }
-            for c, emb in zip(chunks, embeddings)
-        ]
+            if sparse_vectors and i < len(sparse_vectors) and sparse_vectors[i]["indices"]:
+                vec["sparse_values"] = sparse_vectors[i]
+            vectors.append(vec)
 
         batch_size = 100
         for i in range(0, len(vectors), batch_size):
@@ -80,6 +87,7 @@ class VectorStore:
         query_embedding: list[float],
         top_k: int = 5,
         filter_dict: dict = None,
+        sparse_vector: dict | None = None,
     ) -> list[dict]:
         kwargs = {
             "vector": query_embedding,
@@ -89,6 +97,8 @@ class VectorStore:
         }
         if filter_dict:
             kwargs["filter"] = filter_dict
+        if sparse_vector and sparse_vector.get("indices"):
+            kwargs["sparse_vector"] = sparse_vector
 
         response = self.index.query(**kwargs)
 

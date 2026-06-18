@@ -1,10 +1,10 @@
 data:
   raw_dir: data/raw
-  bm25_index_path: data/bm25_index.pkl
+  sparse_encoder_path: data/sparse_encoder.pkl
   registry_db: data/registry.db
 
 pinecone:
-  index_name: rag-eval-framework
+  index_name: rag-eval-hybrid
   dimension: 1536
 
 companies:
@@ -39,9 +39,7 @@ retrieval:
   top_k: 5
   reranker_model: cross-encoder/ms-marco-MiniLM-L-6-v2
   hybrid:
-    vector_weight: 0.7
-    bm25_weight: 0.3
-    rrf_k: 60
+    sparse_weight: 0.3
 
 observability:
   mlflow_experiment: rag-eval-framework

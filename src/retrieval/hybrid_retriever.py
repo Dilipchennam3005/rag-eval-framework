@@ -2,59 +2,49 @@ from loguru import logger
 from .base import BaseRetriever
 from src.embedding.embedder import Embedder
 from src.embedding.vector_store import VectorStore
-from src.embedding.bm25_index import BM25Index
+from src.embedding.sparse_encoder import SparseEncoder
+
+_SPARSE_SCALE = 3.0
 
 
 class HybridRetriever(BaseRetriever):
-    """Reciprocal Rank Fusion over BM25 + vector results."""
+    """
+    Pinecone native sparse-dense hybrid retrieval.
+    Dense (text-embedding-3-small) + sparse (TF-IDF) vectors are stored
+    together in a dotproduct-metric index; Pinecone combines the scores
+    in a single query call — no local BM25 or RRF needed.
+
+    sparse_weight scales the TF-IDF values so sparse signals compete
+    with the typically higher dense dot-product scores.
+    """
 
     def __init__(
         self,
         embedder: Embedder,
         vector_store: VectorStore,
-        bm25_index: BM25Index,
-        vector_weight: float = 0.7,
-        bm25_weight: float = 0.3,
-        rrf_k: int = 60,
+        sparse_encoder: SparseEncoder,
+        sparse_weight: float = 0.3,
     ):
         self.embedder = embedder
         self.vector_store = vector_store
-        self.bm25_index = bm25_index
-        self.vector_weight = vector_weight
-        self.bm25_weight = bm25_weight
-        self.rrf_k = rrf_k
+        self.sparse_encoder = sparse_encoder
+        self.sparse_weight = sparse_weight
 
     def retrieve(self, query: str, top_k: int = 5, filter_dict: dict = None) -> list[dict]:
-        # Vector results
-        query_embedding = self.embedder.embed_query(query)
-        vector_results = self.vector_store.query(query_embedding, top_k=top_k * 3, filter_dict=filter_dict)
+        dense = self.embedder.embed_query(query)
+        raw_sparse = self.sparse_encoder.encode_query(query)
 
-        # BM25 results
-        bm25_results = self.bm25_index.query(query, top_k=top_k * 3)
+        # Scale sparse values so they're weighted relative to dense scores
+        sparse = {
+            "indices": raw_sparse["indices"],
+            "values": [v * self.sparse_weight * _SPARSE_SCALE for v in raw_sparse["values"]],
+        }
 
-        # Reciprocal Rank Fusion
-        scores: dict[str, float] = {}
-        meta: dict[str, dict] = {}
+        results = self.vector_store.query(
+            dense, top_k=top_k, filter_dict=filter_dict, sparse_vector=sparse
+        )
+        for r in results:
+            r["retrieval_method"] = "hybrid_pinecone"
 
-        for rank, r in enumerate(vector_results):
-            cid = r["chunk_id"]
-            scores[cid] = scores.get(cid, 0) + self.vector_weight * (1 / (self.rrf_k + rank + 1))
-            meta[cid] = r
-
-        for rank, r in enumerate(bm25_results):
-            cid = r["chunk_id"]
-            scores[cid] = scores.get(cid, 0) + self.bm25_weight * (1 / (self.rrf_k + rank + 1))
-            if cid not in meta:
-                meta[cid] = r
-
-        ranked = sorted(scores.items(), key=lambda x: x[1], reverse=True)[:top_k]
-
-        results = []
-        for cid, score in ranked:
-            entry = dict(meta[cid])
-            entry["score"] = score
-            entry["retrieval_method"] = "hybrid"
-            results.append(entry)
-
-        logger.debug(f"HybridRetriever: '{query[:60]}' -> {len(results)} results")
+        logger.debug(f"HybridRetriever (Pinecone): '{query[:60]}' -> {len(results)} results")
         return results
