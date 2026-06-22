@@ -39,18 +39,18 @@ flowchart TD
 
 | Run | Faithfulness | Answer Relevancy | Context Precision | Context Recall | Avg Cost/Query |
 |-----|:-----------:|:----------------:|:-----------------:|:--------------:|:--------------:|
-| fixed\_size · v1 | 0.977 | **0.996** | 0.661 | **0.594** | $0.000382 |
+| fixed\_size · v1 | **1.000** | **0.998** | 0.746 | **0.594** | $0.000374 |
 | fixed\_size · v2 | 0.895 | **0.996** | 0.782 | **0.594** | $0.000419 |
-| document\_aware · v1 | **1.000** | 0.991 | 0.796 | 0.531 | $0.000501 |
+| document\_aware · v1 | 0.938 | 0.996 | **0.847** | **0.594** | $0.000472 |
 | document\_aware · v2 | 0.854 | 0.992 | **0.877** | 0.531 | $0.000519 |
 | fixed\_size · v1 · rerank | 0.844 | 0.871 | 0.745 | 0.500 | $0.000379 |
 | document\_aware · v1 · rerank | 0.875 | **0.998** | 0.695 | **0.625** | $0.000462 |
 
 **Key findings:**
-- `document_aware + v1` achieves perfect faithfulness (1.000) — paragraph-aware chunks prevent mid-sentence splits that cause hallucination
-- `document_aware + v2` wins context precision (0.877) — the citation instruction in v2 forces the model to draw only from the most relevant chunks
-- `fixed_size` wins context recall (0.594 without reranker; 0.625 with) — smaller, denser chunks cast a wider net
-- Cross-encoder reranking boosts recall (+0.094 on document\_aware) and answer relevancy (+0.007) but lowers faithfulness on fixed\_size, suggesting smaller chunks produce noisier top-5 after reranking
+- `fixed_size + v1` on Pinecone native hybrid achieves perfect faithfulness (1.000) — the TF-IDF sparse signal helps surface the right chunks for financial keyword queries
+- `document_aware + v2` wins context precision (0.877) — citation instruction forces the model to draw only from the most relevant chunks
+- Both strategies now tie on recall (0.594) with the new hybrid index vs. document\_aware lagging behind before (0.531)
+- Cross-encoder reranking further boosts recall on document\_aware (+0.031) but at a faithfulness cost on fixed\_size — the reranker works better on larger, coherent chunks
 - Average cost per query is **$0.0004–$0.0005** — the full 8-question eval suite costs less than half a cent
 
 ---

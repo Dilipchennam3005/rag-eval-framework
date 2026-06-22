@@ -15,6 +15,9 @@ COPY src/ src/
 COPY configs/ configs/
 COPY prompts/ prompts/
 COPY experiments/ experiments/
+RUN mkdir -p data
+COPY data/sparse_encoder_fixed_size.pkl data/sparse_encoder_fixed_size.pkl
+COPY data/sparse_encoder_document_aware.pkl data/sparse_encoder_document_aware.pkl
 
 EXPOSE 8501
 
